@@ -1,0 +1,610 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF69E9972784A13B0020C5C3 /* BRESS_TournooiPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9962784A13B0020C5C3 /* BRESS_TournooiPlannerApp.swift */; };
+		EF69E9992784A13B0020C5C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9982784A13B0020C5C3 /* ContentView.swift */; };
+		EF69E99B2784A13D0020C5C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF69E99A2784A13D0020C5C3 /* Assets.xcassets */; };
+		EF69E99E2784A13D0020C5C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF69E99D2784A13D0020C5C3 /* Preview Assets.xcassets */; };
+		EF69E9A82784A13D0020C5C3 /* BRESS_TournooiPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9A72784A13D0020C5C3 /* BRESS_TournooiPlannerTests.swift */; };
+		EF69E9B22784A13D0020C5C3 /* BRESS_TournooiPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9B12784A13D0020C5C3 /* BRESS_TournooiPlannerUITests.swift */; };
+		EF69E9B42784A13D0020C5C3 /* BRESS_TournooiPlannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9B32784A13D0020C5C3 /* BRESS_TournooiPlannerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF69E9A42784A13D0020C5C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF69E98B2784A13B0020C5C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF69E9922784A13B0020C5C3;
+			remoteInfo = "BRESS-TournooiPlanner";
+		};
+		EF69E9AE2784A13D0020C5C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF69E98B2784A13B0020C5C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF69E9922784A13B0020C5C3;
+			remoteInfo = "BRESS-TournooiPlanner";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF69E9932784A13B0020C5C3 /* BRESS-TournooiPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BRESS-TournooiPlanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF69E9962784A13B0020C5C3 /* BRESS_TournooiPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRESS_TournooiPlannerApp.swift; sourceTree = "<group>"; };
+		EF69E9982784A13B0020C5C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF69E99A2784A13D0020C5C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF69E99D2784A13D0020C5C3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EF69E9A32784A13D0020C5C3 /* BRESS-TournooiPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BRESS-TournooiPlannerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF69E9A72784A13D0020C5C3 /* BRESS_TournooiPlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRESS_TournooiPlannerTests.swift; sourceTree = "<group>"; };
+		EF69E9AD2784A13D0020C5C3 /* BRESS-TournooiPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BRESS-TournooiPlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF69E9B12784A13D0020C5C3 /* BRESS_TournooiPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRESS_TournooiPlannerUITests.swift; sourceTree = "<group>"; };
+		EF69E9B32784A13D0020C5C3 /* BRESS_TournooiPlannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRESS_TournooiPlannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF69E9902784A13B0020C5C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF69E9A02784A13D0020C5C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF69E9AA2784A13D0020C5C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF69E98A2784A13B0020C5C3 = {
+			isa = PBXGroup;
+			children = (
+				EF69E9952784A13B0020C5C3 /* BRESS-TournooiPlanner */,
+				EF69E9A62784A13D0020C5C3 /* BRESS-TournooiPlannerTests */,
+				EF69E9B02784A13D0020C5C3 /* BRESS-TournooiPlannerUITests */,
+				EF69E9942784A13B0020C5C3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF69E9942784A13B0020C5C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF69E9932784A13B0020C5C3 /* BRESS-TournooiPlanner.app */,
+				EF69E9A32784A13D0020C5C3 /* BRESS-TournooiPlannerTests.xctest */,
+				EF69E9AD2784A13D0020C5C3 /* BRESS-TournooiPlannerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF69E9952784A13B0020C5C3 /* BRESS-TournooiPlanner */ = {
+			isa = PBXGroup;
+			children = (
+				EF69E9962784A13B0020C5C3 /* BRESS_TournooiPlannerApp.swift */,
+				EF69E9982784A13B0020C5C3 /* ContentView.swift */,
+				EF69E99A2784A13D0020C5C3 /* Assets.xcassets */,
+				EF69E99C2784A13D0020C5C3 /* Preview Content */,
+			);
+			path = "BRESS-TournooiPlanner";
+			sourceTree = "<group>";
+		};
+		EF69E99C2784A13D0020C5C3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EF69E99D2784A13D0020C5C3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EF69E9A62784A13D0020C5C3 /* BRESS-TournooiPlannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF69E9A72784A13D0020C5C3 /* BRESS_TournooiPlannerTests.swift */,
+			);
+			path = "BRESS-TournooiPlannerTests";
+			sourceTree = "<group>";
+		};
+		EF69E9B02784A13D0020C5C3 /* BRESS-TournooiPlannerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EF69E9B12784A13D0020C5C3 /* BRESS_TournooiPlannerUITests.swift */,
+				EF69E9B32784A13D0020C5C3 /* BRESS_TournooiPlannerUITestsLaunchTests.swift */,
+			);
+			path = "BRESS-TournooiPlannerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF69E9922784A13B0020C5C3 /* BRESS-TournooiPlanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF69E9B72784A13D0020C5C3 /* Build configuration list for PBXNativeTarget "BRESS-TournooiPlanner" */;
+			buildPhases = (
+				EF69E98F2784A13B0020C5C3 /* Sources */,
+				EF69E9902784A13B0020C5C3 /* Frameworks */,
+				EF69E9912784A13B0020C5C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BRESS-TournooiPlanner";
+			productName = "BRESS-TournooiPlanner";
+			productReference = EF69E9932784A13B0020C5C3 /* BRESS-TournooiPlanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF69E9A22784A13D0020C5C3 /* BRESS-TournooiPlannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF69E9BA2784A13D0020C5C3 /* Build configuration list for PBXNativeTarget "BRESS-TournooiPlannerTests" */;
+			buildPhases = (
+				EF69E99F2784A13D0020C5C3 /* Sources */,
+				EF69E9A02784A13D0020C5C3 /* Frameworks */,
+				EF69E9A12784A13D0020C5C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF69E9A52784A13D0020C5C3 /* PBXTargetDependency */,
+			);
+			name = "BRESS-TournooiPlannerTests";
+			productName = "BRESS-TournooiPlannerTests";
+			productReference = EF69E9A32784A13D0020C5C3 /* BRESS-TournooiPlannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF69E9AC2784A13D0020C5C3 /* BRESS-TournooiPlannerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF69E9BD2784A13D0020C5C3 /* Build configuration list for PBXNativeTarget "BRESS-TournooiPlannerUITests" */;
+			buildPhases = (
+				EF69E9A92784A13D0020C5C3 /* Sources */,
+				EF69E9AA2784A13D0020C5C3 /* Frameworks */,
+				EF69E9AB2784A13D0020C5C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF69E9AF2784A13D0020C5C3 /* PBXTargetDependency */,
+			);
+			name = "BRESS-TournooiPlannerUITests";
+			productName = "BRESS-TournooiPlannerUITests";
+			productReference = EF69E9AD2784A13D0020C5C3 /* BRESS-TournooiPlannerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF69E98B2784A13B0020C5C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					EF69E9922784A13B0020C5C3 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					EF69E9A22784A13D0020C5C3 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = EF69E9922784A13B0020C5C3;
+					};
+					EF69E9AC2784A13D0020C5C3 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = EF69E9922784A13B0020C5C3;
+					};
+				};
+			};
+			buildConfigurationList = EF69E98E2784A13B0020C5C3 /* Build configuration list for PBXProject "BRESS-TournooiPlanner" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF69E98A2784A13B0020C5C3;
+			productRefGroup = EF69E9942784A13B0020C5C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF69E9922784A13B0020C5C3 /* BRESS-TournooiPlanner */,
+				EF69E9A22784A13D0020C5C3 /* BRESS-TournooiPlannerTests */,
+				EF69E9AC2784A13D0020C5C3 /* BRESS-TournooiPlannerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF69E9912784A13B0020C5C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF69E99E2784A13D0020C5C3 /* Preview Assets.xcassets in Resources */,
+				EF69E99B2784A13D0020C5C3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF69E9A12784A13D0020C5C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF69E9AB2784A13D0020C5C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF69E98F2784A13B0020C5C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF69E9992784A13B0020C5C3 /* ContentView.swift in Sources */,
+				EF69E9972784A13B0020C5C3 /* BRESS_TournooiPlannerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF69E99F2784A13D0020C5C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF69E9A82784A13D0020C5C3 /* BRESS_TournooiPlannerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF69E9A92784A13D0020C5C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF69E9B42784A13D0020C5C3 /* BRESS_TournooiPlannerUITestsLaunchTests.swift in Sources */,
+				EF69E9B22784A13D0020C5C3 /* BRESS_TournooiPlannerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF69E9A52784A13D0020C5C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF69E9922784A13B0020C5C3 /* BRESS-TournooiPlanner */;
+			targetProxy = EF69E9A42784A13D0020C5C3 /* PBXContainerItemProxy */;
+		};
+		EF69E9AF2784A13D0020C5C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF69E9922784A13B0020C5C3 /* BRESS-TournooiPlanner */;
+			targetProxy = EF69E9AE2784A13D0020C5C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EF69E9B52784A13D0020C5C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF69E9B62784A13D0020C5C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF69E9B82784A13D0020C5C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BRESS-TournooiPlanner/Preview Content\"";
+				DEVELOPMENT_TEAM = 963LK66N4P;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.bress.BRESS-TournooiPlanner";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF69E9B92784A13D0020C5C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BRESS-TournooiPlanner/Preview Content\"";
+				DEVELOPMENT_TEAM = 963LK66N4P;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.bress.BRESS-TournooiPlanner";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EF69E9BB2784A13D0020C5C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 963LK66N4P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.bress.BRESS-TournooiPlannerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BRESS-TournooiPlanner.app/BRESS-TournooiPlanner";
+			};
+			name = Debug;
+		};
+		EF69E9BC2784A13D0020C5C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 963LK66N4P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.bress.BRESS-TournooiPlannerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BRESS-TournooiPlanner.app/BRESS-TournooiPlanner";
+			};
+			name = Release;
+		};
+		EF69E9BE2784A13D0020C5C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 963LK66N4P;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.bress.BRESS-TournooiPlannerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "BRESS-TournooiPlanner";
+			};
+			name = Debug;
+		};
+		EF69E9BF2784A13D0020C5C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 963LK66N4P;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.bress.BRESS-TournooiPlannerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "BRESS-TournooiPlanner";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF69E98E2784A13B0020C5C3 /* Build configuration list for PBXProject "BRESS-TournooiPlanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF69E9B52784A13D0020C5C3 /* Debug */,
+				EF69E9B62784A13D0020C5C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF69E9B72784A13D0020C5C3 /* Build configuration list for PBXNativeTarget "BRESS-TournooiPlanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF69E9B82784A13D0020C5C3 /* Debug */,
+				EF69E9B92784A13D0020C5C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF69E9BA2784A13D0020C5C3 /* Build configuration list for PBXNativeTarget "BRESS-TournooiPlannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF69E9BB2784A13D0020C5C3 /* Debug */,
+				EF69E9BC2784A13D0020C5C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF69E9BD2784A13D0020C5C3 /* Build configuration list for PBXNativeTarget "BRESS-TournooiPlannerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF69E9BE2784A13D0020C5C3 /* Debug */,
+				EF69E9BF2784A13D0020C5C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF69E98B2784A13B0020C5C3 /* Project object */;
+}
