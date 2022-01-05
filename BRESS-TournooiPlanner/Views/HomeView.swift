@@ -26,9 +26,11 @@ struct HomeView: View {
         }.onAppear(perform: startHomePage)
     }
     
-    var buttonColor: Color{
-        return email.isEmpty || password.isEmpty ? .gray : .black
+    func startHomePage(){
+        let token = getUserToken()
+        print(token)
     }
+
 }
 
 struct HomeView_Previews: PreviewProvider {
@@ -37,9 +39,3 @@ struct HomeView_Previews: PreviewProvider {
     }
 }
 
-func startHomePage(){
-    let token = getUserToken()
-    if token != " " {
-        //TODO navigeer door naar volgende pagina
-    }
-}

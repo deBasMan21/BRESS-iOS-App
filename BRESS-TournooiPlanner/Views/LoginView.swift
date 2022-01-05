@@ -59,15 +59,17 @@ struct LoginView: View {
     var buttonColor: Color{
         return email.isEmpty || password.isEmpty ? .gray : .black
     }
-}
+    
+    func startLoginPage(){
+        let token = getUserToken()
+        if token != " " {
+            toHome = true
+        }
+    }
 
-func startLoginPage(){
-    let token = getUserToken()
-    if token != " " {
-        //TODO navigeer door naar volgende pagina
+    func signIn(email : String, password : String) {
+        apiLogin(email: email, password: password)
     }
 }
 
-func signIn(email : String, password : String) {
-    apiLogin(email: email, password: password)
-}
+
