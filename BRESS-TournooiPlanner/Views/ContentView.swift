@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         if homeView{
-            HomeView()
+            HomeView(toHome: $homeView)
         } else {
             LoginView(toHome: $homeView)
         }
