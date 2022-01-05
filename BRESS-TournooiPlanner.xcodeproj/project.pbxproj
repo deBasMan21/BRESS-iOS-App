@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EF69E9972784A13B0020C5C3 /* BRESS_TournooiPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9962784A13B0020C5C3 /* BRESS_TournooiPlannerApp.swift */; };
-		EF69E9992784A13B0020C5C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9982784A13B0020C5C3 /* ContentView.swift */; };
+		EF69E9992784A13B0020C5C3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9982784A13B0020C5C3 /* LoginView.swift */; };
 		EF69E99B2784A13D0020C5C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF69E99A2784A13D0020C5C3 /* Assets.xcassets */; };
 		EF69E99E2784A13D0020C5C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF69E99D2784A13D0020C5C3 /* Preview Assets.xcassets */; };
 		EF69E9A82784A13D0020C5C3 /* BRESS_TournooiPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9A72784A13D0020C5C3 /* BRESS_TournooiPlannerTests.swift */; };
@@ -17,6 +17,9 @@
 		EF69E9C22785934D0020C5C3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9C12785934D0020C5C3 /* AuthenticationService.swift */; };
 		EF69E9C52785963C0020C5C3 /* LoginResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9C42785963C0020C5C3 /* LoginResponseModels.swift */; };
 		EF69E9C727859C230020C5C3 /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9C627859C230020C5C3 /* KeyChainService.swift */; };
+		EF69E9CB2785E6F00020C5C3 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9CA2785E6F00020C5C3 /* DataExtension.swift */; };
+		EF69E9CD2785E72D0020C5C3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9CC2785E72D0020C5C3 /* HomeView.swift */; };
+		EF69E9CF2785E81D0020C5C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9CE2785E81D0020C5C3 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,7 @@
 /* Begin PBXFileReference section */
 		EF69E9932784A13B0020C5C3 /* BRESS-TournooiPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BRESS-TournooiPlanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF69E9962784A13B0020C5C3 /* BRESS_TournooiPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRESS_TournooiPlannerApp.swift; sourceTree = "<group>"; };
-		EF69E9982784A13B0020C5C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF69E9982784A13B0020C5C3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EF69E99A2784A13D0020C5C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF69E99D2784A13D0020C5C3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF69E9A32784A13D0020C5C3 /* BRESS-TournooiPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BRESS-TournooiPlannerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +53,9 @@
 		EF69E9C12785934D0020C5C3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		EF69E9C42785963C0020C5C3 /* LoginResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModels.swift; sourceTree = "<group>"; };
 		EF69E9C627859C230020C5C3 /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
+		EF69E9CA2785E6F00020C5C3 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
+		EF69E9CC2785E72D0020C5C3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EF69E9CE2785E81D0020C5C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,10 +106,11 @@
 		EF69E9952784A13B0020C5C3 /* BRESS-TournooiPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				EF69E9C92785E6DF0020C5C3 /* Logic */,
+				EF69E9C82785E6790020C5C3 /* Views */,
 				EF69E9C3278596270020C5C3 /* Domain */,
 				EF69E9C0278593300020C5C3 /* Infrastructure */,
 				EF69E9962784A13B0020C5C3 /* BRESS_TournooiPlannerApp.swift */,
-				EF69E9982784A13B0020C5C3 /* ContentView.swift */,
 				EF69E99A2784A13D0020C5C3 /* Assets.xcassets */,
 				EF69E99C2784A13D0020C5C3 /* Preview Content */,
 			);
@@ -150,6 +157,24 @@
 				EF69E9C42785963C0020C5C3 /* LoginResponseModels.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		EF69E9C82785E6790020C5C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EF69E9982784A13B0020C5C3 /* LoginView.swift */,
+				EF69E9CC2785E72D0020C5C3 /* HomeView.swift */,
+				EF69E9CE2785E81D0020C5C3 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EF69E9C92785E6DF0020C5C3 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				EF69E9CA2785E6F00020C5C3 /* DataExtension.swift */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,9 +308,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF69E9C52785963C0020C5C3 /* LoginResponseModels.swift in Sources */,
+				EF69E9CD2785E72D0020C5C3 /* HomeView.swift in Sources */,
+				EF69E9CF2785E81D0020C5C3 /* ContentView.swift in Sources */,
+				EF69E9CB2785E6F00020C5C3 /* DataExtension.swift in Sources */,
 				EF69E9C22785934D0020C5C3 /* AuthenticationService.swift in Sources */,
 				EF69E9C727859C230020C5C3 /* KeyChainService.swift in Sources */,
-				EF69E9992784A13B0020C5C3 /* ContentView.swift in Sources */,
+				EF69E9992784A13B0020C5C3 /* LoginView.swift in Sources */,
 				EF69E9972784A13B0020C5C3 /* BRESS_TournooiPlannerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

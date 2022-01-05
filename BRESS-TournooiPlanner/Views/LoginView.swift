@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LoginView: View {
+    @Binding var toHome: Bool
+    
     @State private var email: String = ""
     @State private var password: String = ""
     
@@ -38,6 +40,7 @@ struct ContentView: View {
                         
                         Button{
                             signIn(email: email, password: password)
+                            self.toHome = true
                         } label: {
                             Text("Log in")
                                 .foregroundColor(Color.white)
@@ -50,7 +53,7 @@ struct ContentView: View {
 
                     }.padding(50)
                 )
-        }.onAppear(perform: startPage)
+        }.onAppear(perform: startLoginPage)
     }
     
     var buttonColor: Color{
@@ -58,13 +61,7 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-
-func startPage(){
+func startLoginPage(){
     let token = getUserToken()
     if token != " " {
         //TODO navigeer door naar volgende pagina
