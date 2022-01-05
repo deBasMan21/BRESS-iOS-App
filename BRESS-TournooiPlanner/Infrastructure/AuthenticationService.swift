@@ -35,7 +35,8 @@ func apiLogin(email:String, password:String) {
             let tokenData : Data = token.data(using: .utf8)!
             
             let playerId : String = String(model.result.user.id)
-            let playerIdData : Data = playerId.data(using: .utf8)!
+//            let playerIdData : Data = playerId.data(using: .utf8)!
+            let playerIdData : Data = Data(from: playerId)
             print(playerId)
             
             saveToken(token: tokenData, service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-token")
@@ -81,8 +82,6 @@ func getUserToken() -> String{
 }
 
 func getUserId() -> Int{
-    let token: String = String(data: getToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerId"), encoding: .utf8)!
-    print(token)
-    let tokenInt: Int = Int(token) ?? 0
-    return tokenInt
+    let userId: Int = getToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerId").to(type: Int.self)
+    return userId
 }

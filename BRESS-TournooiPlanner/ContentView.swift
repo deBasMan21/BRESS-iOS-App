@@ -65,9 +65,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 func startPage(){
-    apiLogout(email: "sem@gmail.com")
     let token = getUserToken()
-    print(getUserId())
     if token != " " {
         //TODO navigeer door naar volgende pagina
     }
@@ -75,7 +73,4 @@ func startPage(){
 
 func signIn(email : String, password : String) {
     apiLogin(email: email, password: password)
-    
-    print(getUserToken())
-    print(getUserId())
 }
