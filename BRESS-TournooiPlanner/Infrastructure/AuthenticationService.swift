@@ -34,13 +34,16 @@ func apiLogin(email:String, password:String) {
             let token : String = model.result.token
             let tokenData : Data = token.data(using: .utf8)!
             
+            let playerEmail : String = model.result.user.email
+            let playerEmailData : Data = playerEmail.data(using: .utf8)!
+            
             let playerId : String = String(model.result.user.id)
-//            let playerIdData : Data = playerId.data(using: .utf8)!
             let playerIdData : Data = Data(from: playerId)
             print(playerId)
             
             saveToken(token: tokenData, service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-token")
             saveToken(token: playerIdData, service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerId")
+            saveToken(token: playerEmailData, service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerEmail")
         } catch let parsingError{
             print("error", parsingError)
         }
@@ -70,7 +73,9 @@ func apiLogout(email: String){
             return
         }
         print(String(data: data, encoding: .utf8) as Any)
-        deleteToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS")
+        deleteToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-token")
+        deleteToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerId")
+        deleteToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerEmail")
     }
     
     task.resume()
@@ -84,4 +89,9 @@ func getUserToken() -> String{
 func getUserId() -> Int{
     let userId: Int = getToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerId").to(type: Int.self)
     return userId
+}
+
+func getUserEmail() -> String{
+    let email: String = String(data: getToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerEmail"), encoding: .utf8)!
+    return email
 }

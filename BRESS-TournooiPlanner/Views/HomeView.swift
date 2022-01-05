@@ -31,7 +31,7 @@ struct HomeView: View {
             Spacer()
             
             Button{
-                signOut(email: "sem@gmail.com")
+                signOut(email: getUserEmail())
             } label: {
                 Text("Log uit")
                     .foregroundColor(Color.white)
@@ -40,6 +40,7 @@ struct HomeView: View {
                     .frame(maxWidth: .infinity)
             }.background(Color.accentColor)
                 .padding(.top, 15)
+                .padding(.horizontal, 30)
             
         }.onAppear(perform: startHomePage)
     }
