@@ -10,4 +10,6 @@ import Foundation
 enum NavigateToPage{
     case home
     case login
+    case register
+    case createPlayer
 }

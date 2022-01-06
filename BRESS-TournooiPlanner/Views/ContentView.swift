@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var homeView : NavigateToPage = .login;
+    @State var navigation : NavigateToPage = .login;
+    @State var email : String = ""
     
     var body: some View {
-        if homeView == .home{
-            HomeView(toHome: $homeView)
-        } else if homeView == .login{
-            LoginView(toHome: $homeView)
+        if navigation == .home{
+            HomeView(navigation: $navigation)
+        } else if navigation == .login{
+            LoginView(navigation: $navigation).onAppear(perform: {email = ""})
+        } else if navigation == .register {
+            RegisterView(navigation: $navigation, email: $email)
+        } else if navigation == .createPlayer{
+            CreatePlayerView(navigation: $navigation, email: $email)
         }
     }
 }
