@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var homeView = false;
+    @State var homeView : NavigateToPage = .login;
     
     var body: some View {
-        if homeView{
-            HomeView()
-        } else {
+        if homeView == .home{
+            HomeView(toHome: $homeView)
+        } else if homeView == .login{
             LoginView(toHome: $homeView)
         }
     }
