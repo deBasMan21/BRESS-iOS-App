@@ -82,9 +82,10 @@ struct HomeView: View {
     }
     
     func startHomePage() async{
-        print("test")
+        let userId = getUserId()
+        print("homepage ", userId)
         do{
-            let game : Game? = try await getCurrentGame(playerId: getUserId())
+            let game : Game? = try await getCurrentGame()
             if game != nil{
                 currentGame = game!
                 

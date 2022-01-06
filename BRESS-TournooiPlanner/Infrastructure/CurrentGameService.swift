@@ -7,12 +7,14 @@
 
 import Foundation
 
-func getCurrentGame(playerId : Int) async throws -> Game? {
+func getCurrentGame() async throws -> Game? {
     var returnValue : Game? = nil
+    let playerId : Int = getUserId()
+    print("getgame ", playerId)
     
     let token = getUserToken()
     
-    let url = URL(string: "https://bress-api.azurewebsites.net/api/player/1/currentGame")!
+    let url = URL(string: "https://bress-api.azurewebsites.net/api/player/\(playerId)/currentGame")!
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
     
@@ -40,12 +42,14 @@ func getCurrentGame(playerId : Int) async throws -> Game? {
 
 func enterScore(score : [Bool], gameId : Int) async throws{
     let token = getUserToken()
+    let playerId : Int = getUserId()
+    print(playerId)
     
     let json : [String: Any] = ["sets": score]
     
     let jsonData = try? JSONSerialization.data(withJSONObject: json)
     
-    let url = URL(string: "https://bress-api.azurewebsites.net/api/player/1/currentGame/\(gameId)")!
+    let url = URL(string: "https://bress-api.azurewebsites.net/api/player/\(playerId)/currentGame/\(gameId)")!
     var request = URLRequest(url: url)
     request.httpMethod = "PUT"
     

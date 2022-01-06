@@ -7,7 +7,7 @@
 
 import Foundation
 
-func apiLogin(email:String, password:String) async throws {
+func apiLogin(email:String, password:String) async throws -> Bool {
     let json : [String: Any] = ["email": email, "password": password, "fbtoken": "token"]
     
     let jsonData = try? JSONSerialization.data(withJSONObject: json)
@@ -42,7 +42,9 @@ func apiLogin(email:String, password:String) async throws {
         saveToken(token: playerEmailData, service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerEmail")
     } catch let parsingError{
         print("error", parsingError)
+        return false
     }
+    return true
 }
 
 

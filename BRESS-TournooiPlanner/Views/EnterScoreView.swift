@@ -33,7 +33,7 @@ struct EnterScoreView: View {
             
             Image("logo-bress-orange")
             Text("Score invullen voor wedstrijd #\(game.id)").font(.system(size: 20, weight: .bold))
-            Text("\(game.player1.name) tegen \(game.player2.name) op \(game.field.name)")
+            Text("\(game.player1.name) tegen \(game.player2.name) in \(game.field.name)")
             Text("Geef per set aan wie er heeft gewonnen")
             
             VStack{
