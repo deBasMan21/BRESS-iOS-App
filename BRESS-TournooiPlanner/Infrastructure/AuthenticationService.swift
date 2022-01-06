@@ -33,13 +33,12 @@ func apiLogin(email:String, password:String) async throws -> Bool {
         let playerEmail : String = model.result.user.email
         let playerEmailData : Data = playerEmail.data(using: .utf8)!
         
-        let playerId : String = String(model.result.user.id)
-        let playerIdData : Data = Data(from: playerId)
-        print(playerId)
+        let playerId : Int = model.result.user.id
+        let playerIdData : Data = playerId.data
         
-        saveToken(token: tokenData, service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-token")
-        saveToken(token: playerIdData, service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerId")
-        saveToken(token: playerEmailData, service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerEmail")
+        saveToken(token: tokenData, service: "nl.bress.BRESS-TournooiPlanner-token", account: "BRESS-token")
+        saveToken(token: playerIdData, service: "nl.bress.BRESS-TournooiPlanner-id", account: "BRESS-playerId")
+        saveToken(token: playerEmailData, service: "nl.bress.BRESS-TournooiPlanner-email", account: "BRESS-playerEmail")
     } catch let parsingError{
         print("error", parsingError)
         return false
@@ -65,22 +64,21 @@ func apiLogout(email: String) async throws{
     let(data, _) = try await URLSession.shared.data(for: request)
     
     print(String(data: data, encoding: .utf8) as Any)
-    deleteToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-token")
-    deleteToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerId")
-    deleteToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerEmail")
+    deleteToken(service: "nl.bress.BRESS-TournooiPlanner-token", account: "BRESS-token")
+    deleteToken(service: "nl.bress.BRESS-TournooiPlanner-id", account: "BRESS-playerId")
+    deleteToken(service: "nl.bress.BRESS-TournooiPlanner-email", account: "BRESS-playerEmail")
 }
 
 func getUserToken() -> String{
-    let token: String = String(data: getToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-token"), encoding: .utf8)!
+    let token: String = String(data: getToken(service: "nl.bress.BRESS-TournooiPlanner-token", account: "BRESS-token"), encoding: .utf8)!
     return token
 }
 
 func getUserId() -> Int{
-    let userId: Int = getToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerId").to(type: Int.self)
-    return userId
+    return Int(getToken(service: "nl.bress.BRESS-TournooiPlanner-id", account: "BRESS-playerId").uint8)
 }
 
 func getUserEmail() -> String{
-    let email: String = String(data: getToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerEmail"), encoding: .utf8)!
+    let email: String = String(data: getToken(service: "nl.bress.BRESS-TournooiPlanner-email", account: "BRESS-playerEmail"), encoding: .utf8)!
     return email
 }

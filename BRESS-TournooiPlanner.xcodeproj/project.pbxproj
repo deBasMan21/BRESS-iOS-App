@@ -27,6 +27,8 @@
 		EF69E9DC2786F6370020C5C3 /* NavigationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9DB2786F6370020C5C3 /* NavigationEnum.swift */; };
 		EF69E9DE2786FD9E0020C5C3 /* EnterScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9DD2786FD9E0020C5C3 /* EnterScoreView.swift */; };
 		EF69E9E22786FE510020C5C3 /* PopupExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9E12786FE510020C5C3 /* PopupExtension.swift */; };
+		EF69E9E6278724240020C5C3 /* DataExtension2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9E5278724240020C5C3 /* DataExtension2.swift */; };
+		EF69E9E8278724390020C5C3 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9E7278724390020C5C3 /* IntExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		EF69E9DB2786F6370020C5C3 /* NavigationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationEnum.swift; sourceTree = "<group>"; };
 		EF69E9DD2786FD9E0020C5C3 /* EnterScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterScoreView.swift; sourceTree = "<group>"; };
 		EF69E9E12786FE510020C5C3 /* PopupExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupExtension.swift; sourceTree = "<group>"; };
+		EF69E9E5278724240020C5C3 /* DataExtension2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension2.swift; sourceTree = "<group>"; };
+		EF69E9E7278724390020C5C3 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				EF69E9CA2785E6F00020C5C3 /* DataExtension.swift */,
+				EF69E9E5278724240020C5C3 /* DataExtension2.swift */,
+				EF69E9E7278724390020C5C3 /* IntExtension.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -338,9 +344,11 @@
 				EF69E9DA2786E9DB0020C5C3 /* CurrentGameService.swift in Sources */,
 				EF69E9CB2785E6F00020C5C3 /* DataExtension.swift in Sources */,
 				EF69E9D42786DF780020C5C3 /* GameView.swift in Sources */,
+				EF69E9E6278724240020C5C3 /* DataExtension2.swift in Sources */,
 				EF69E9C22785934D0020C5C3 /* AuthenticationService.swift in Sources */,
 				EF69E9E22786FE510020C5C3 /* PopupExtension.swift in Sources */,
 				EF69E9DC2786F6370020C5C3 /* NavigationEnum.swift in Sources */,
+				EF69E9E8278724390020C5C3 /* IntExtension.swift in Sources */,
 				EF69E9C727859C230020C5C3 /* KeyChainService.swift in Sources */,
 				EF69E9992784A13B0020C5C3 /* LoginView.swift in Sources */,
 				EF69E9DE2786FD9E0020C5C3 /* EnterScoreView.swift in Sources */,
