@@ -17,7 +17,7 @@ struct HomeView: View {
     @State private var hasGame : Bool = false
     @State private var currentGame : Game = Game(id: 1, score: "0 - 0", winner: 0, inQueue: true, gameStarted: true, field: Field(id: 1, name: "Zaal 1", isAvailable: true), player1: Player(id: 1, name: "Robin Schellius", email: "robin@schellius.nl", score: 10, pointBalance: 0, skillLevel: SkillLevel(id: 0, name: "Beginner"), fbToken: "Token"), player2: Player(id: 1, name: "Sies de Witte", email: "s.dewitte@bress.nl", score: 10, pointBalance: 0, skillLevel: SkillLevel(id: 0, name: "Beginner"), fbToken: "Token"))
     
-    
+    @State private var showPopUp : Bool = false
     
     var body: some View {
         VStack{
@@ -25,24 +25,29 @@ struct HomeView: View {
                 Color.gray
                     .ignoresSafeArea()
                     .overlay{
-                    HStack{
-                        Image("logo-bress-orange")
-                            .resizable()
-                            .scaledToFit()
+                        HStack{
+                            Image("logo-bress-orange")
+                                .resizable()
+                                .scaledToFit()
+                                
+                            Spacer()
                             
-                        Spacer()
-                        
-                        Image("settings")
-                            .resizable()
-                            .scaledToFit()
-                    }.padding(.vertical, 10)
-                        .padding(.horizontal, 20)
-                }.frame(height: 50)
+                            Image("refresh")
+                                .resizable()
+                                .scaledToFit()
+                                .onTapGesture{
+                                    Task.init{
+                                        await startHomePage()
+                                    }
+                                }
+                        }.padding(.vertical, 10)
+                            .padding(.horizontal, 20)
+                    }.frame(height: 50)
             }
             
             VStack{
                 if hasGame{
-                    GameView(game: $currentGame)
+                    GameView(game: currentGame, showPopUp: $showPopUp)
                 } else{
                     NoGameView()
                 }
@@ -69,16 +74,23 @@ struct HomeView: View {
                 await startHomePage()
                 
             }
-        })
+        }).popup(isPresented: $showPopUp){
+            BottomPopupView{
+                EnterScoreView(showPopUp: $showPopUp, refresh: startHomePage, game: currentGame)
+            }
+        }
     }
     
     func startHomePage() async{
+        print("test")
         do{
             let game : Game? = try await getCurrentGame(playerId: getUserId())
             if game != nil{
                 currentGame = game!
                 
                 hasGame = true
+            } else {
+                hasGame = false
             }
         }catch let exception{
             print(exception)
