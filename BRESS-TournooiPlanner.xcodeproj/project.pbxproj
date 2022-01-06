@@ -35,6 +35,7 @@
 		EF69E9F22787477E0020C5C3 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9F12787477E0020C5C3 /* PlayerService.swift */; };
 		EF69E9F4278749BB0020C5C3 /* SkillLevelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9F3278749BB0020C5C3 /* SkillLevelService.swift */; };
 		EF69E9F627874B2D0020C5C3 /* SkillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9F527874B2D0020C5C3 /* SkillLevel.swift */; };
+		EF69E9F827875F1E0020C5C3 /* CreatePlayerResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9F727875F1E0020C5C3 /* CreatePlayerResponseModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		EF69E9F12787477E0020C5C3 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
 		EF69E9F3278749BB0020C5C3 /* SkillLevelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevelService.swift; sourceTree = "<group>"; };
 		EF69E9F527874B2D0020C5C3 /* SkillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevel.swift; sourceTree = "<group>"; };
+		EF69E9F727875F1E0020C5C3 /* CreatePlayerResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerResponseModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				EF69E9DB2786F6370020C5C3 /* NavigationEnum.swift */,
 				EF69E9ED278738F70020C5C3 /* RegisterResponseModels.swift */,
 				EF69E9F527874B2D0020C5C3 /* SkillLevel.swift */,
+				EF69E9F727875F1E0020C5C3 /* CreatePlayerResponseModels.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				EF69E9CD2785E72D0020C5C3 /* HomeView.swift in Sources */,
 				EF69E9CF2785E81D0020C5C3 /* ContentView.swift in Sources */,
 				EF69E9D62786E46A0020C5C3 /* NoGameView.swift in Sources */,
+				EF69E9F827875F1E0020C5C3 /* CreatePlayerResponseModels.swift in Sources */,
 				EF69E9F0278744A70020C5C3 /* CreatePlayerView.swift in Sources */,
 				EF69E9DA2786E9DB0020C5C3 /* CurrentGameService.swift in Sources */,
 				EF69E9D42786DF780020C5C3 /* GameView.swift in Sources */,

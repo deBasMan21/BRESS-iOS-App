@@ -31,6 +31,18 @@ func apiCreatePlayer(email: String, name: String, skillLevel: Int) async throws 
         let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
         print(jsonResponse)
         
+        let decoder = JSONDecoder()
+        let model = try decoder.decode(PlayerWrapper.self, from: data)
+        
+        let playerEmail : String = model.result.email
+        let playerEmailData : Data = playerEmail.data(using: .utf8)!
+        
+        let playerId : Int = model.result.id
+        let playerIdData : Data = playerId.data
+        
+        saveToken(token: playerIdData, service: "nl.bress.BRESS-TournooiPlanner-id", account: "BRESS-playerId")
+        saveToken(token: playerEmailData, service: "nl.bress.BRESS-TournooiPlanner-email", account: "BRESS-playerEmail")
+        
         return true
     } catch let parsingError{
         print("error", parsingError)

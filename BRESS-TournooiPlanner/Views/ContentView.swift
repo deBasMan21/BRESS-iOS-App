@@ -15,7 +15,7 @@ struct ContentView: View {
         if navigation == .home{
             HomeView(navigation: $navigation)
         } else if navigation == .login{
-            LoginView(navigation: $navigation)
+            LoginView(navigation: $navigation).onAppear(perform: {email = ""})
         } else if navigation == .register {
             RegisterView(navigation: $navigation, email: $email)
         } else if navigation == .createPlayer{
