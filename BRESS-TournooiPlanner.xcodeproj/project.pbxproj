@@ -20,6 +20,11 @@
 		EF69E9CB2785E6F00020C5C3 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9CA2785E6F00020C5C3 /* DataExtension.swift */; };
 		EF69E9CD2785E72D0020C5C3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9CC2785E72D0020C5C3 /* HomeView.swift */; };
 		EF69E9CF2785E81D0020C5C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9CE2785E81D0020C5C3 /* ContentView.swift */; };
+		EF69E9D42786DF780020C5C3 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9D32786DF780020C5C3 /* GameView.swift */; };
+		EF69E9D62786E46A0020C5C3 /* NoGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9D52786E46A0020C5C3 /* NoGameView.swift */; };
+		EF69E9D82786E5310020C5C3 /* GameResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9D72786E5310020C5C3 /* GameResponseModels.swift */; };
+		EF69E9DA2786E9DB0020C5C3 /* CurrentGameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9D92786E9DB0020C5C3 /* CurrentGameService.swift */; };
+		EF69E9DC2786F6370020C5C3 /* NavigationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9DB2786F6370020C5C3 /* NavigationEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,12 @@
 		EF69E9CA2785E6F00020C5C3 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		EF69E9CC2785E72D0020C5C3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EF69E9CE2785E81D0020C5C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF69E9D22786DF210020C5C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EF69E9D32786DF780020C5C3 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		EF69E9D52786E46A0020C5C3 /* NoGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoGameView.swift; sourceTree = "<group>"; };
+		EF69E9D72786E5310020C5C3 /* GameResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponseModels.swift; sourceTree = "<group>"; };
+		EF69E9D92786E9DB0020C5C3 /* CurrentGameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentGameService.swift; sourceTree = "<group>"; };
+		EF69E9DB2786F6370020C5C3 /* NavigationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +117,7 @@
 		EF69E9952784A13B0020C5C3 /* BRESS-TournooiPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				EF69E9D22786DF210020C5C3 /* Info.plist */,
 				EF69E9C92785E6DF0020C5C3 /* Logic */,
 				EF69E9C82785E6790020C5C3 /* Views */,
 				EF69E9C3278596270020C5C3 /* Domain */,
@@ -147,6 +159,7 @@
 			children = (
 				EF69E9C12785934D0020C5C3 /* AuthenticationService.swift */,
 				EF69E9C627859C230020C5C3 /* KeyChainService.swift */,
+				EF69E9D92786E9DB0020C5C3 /* CurrentGameService.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -155,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				EF69E9C42785963C0020C5C3 /* LoginResponseModels.swift */,
+				EF69E9D72786E5310020C5C3 /* GameResponseModels.swift */,
+				EF69E9DB2786F6370020C5C3 /* NavigationEnum.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -165,6 +180,8 @@
 				EF69E9982784A13B0020C5C3 /* LoginView.swift */,
 				EF69E9CC2785E72D0020C5C3 /* HomeView.swift */,
 				EF69E9CE2785E81D0020C5C3 /* ContentView.swift */,
+				EF69E9D32786DF780020C5C3 /* GameView.swift */,
+				EF69E9D52786E46A0020C5C3 /* NoGameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,10 +325,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF69E9C52785963C0020C5C3 /* LoginResponseModels.swift in Sources */,
+				EF69E9D82786E5310020C5C3 /* GameResponseModels.swift in Sources */,
 				EF69E9CD2785E72D0020C5C3 /* HomeView.swift in Sources */,
 				EF69E9CF2785E81D0020C5C3 /* ContentView.swift in Sources */,
+				EF69E9D62786E46A0020C5C3 /* NoGameView.swift in Sources */,
+				EF69E9DA2786E9DB0020C5C3 /* CurrentGameService.swift in Sources */,
 				EF69E9CB2785E6F00020C5C3 /* DataExtension.swift in Sources */,
+				EF69E9D42786DF780020C5C3 /* GameView.swift in Sources */,
 				EF69E9C22785934D0020C5C3 /* AuthenticationService.swift in Sources */,
+				EF69E9DC2786F6370020C5C3 /* NavigationEnum.swift in Sources */,
 				EF69E9C727859C230020C5C3 /* KeyChainService.swift in Sources */,
 				EF69E9992784A13B0020C5C3 /* LoginView.swift in Sources */,
 				EF69E9972784A13B0020C5C3 /* BRESS_TournooiPlannerApp.swift in Sources */,
@@ -478,11 +500,14 @@
 				DEVELOPMENT_TEAM = 963LK66N4P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BRESS-TournooiPlanner/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -507,11 +532,14 @@
 				DEVELOPMENT_TEAM = 963LK66N4P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BRESS-TournooiPlanner/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

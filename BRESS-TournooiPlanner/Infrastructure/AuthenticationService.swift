@@ -7,7 +7,7 @@
 
 import Foundation
 
-func apiLogin(email:String, password:String) {
+func apiLogin(email:String, password:String) async throws {
     let json : [String: Any] = ["email": email, "password": password, "fbtoken": "token"]
     
     let jsonData = try? JSONSerialization.data(withJSONObject: json)
@@ -20,40 +20,33 @@ func apiLogin(email:String, password:String) {
     request.addValue("application/json", forHTTPHeaderField: "Accept")
 
     request.httpBody = jsonData
-
-    let task = URLSession.shared.dataTask(with: request){ data, response, error in
-        guard let data = data, error == nil else{
-            print(error?.localizedDescription ?? "no data")
-            return
-        }
-        
-        do{
-            let decoder = JSONDecoder()
-            let model = try decoder.decode(loginResponseWrapper.self, from: data)
-            
-            let token : String = model.result.token
-            let tokenData : Data = token.data(using: .utf8)!
-            
-            let playerEmail : String = model.result.user.email
-            let playerEmailData : Data = playerEmail.data(using: .utf8)!
-            
-            let playerId : String = String(model.result.user.id)
-            let playerIdData : Data = Data(from: playerId)
-            print(playerId)
-            
-            saveToken(token: tokenData, service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-token")
-            saveToken(token: playerIdData, service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerId")
-            saveToken(token: playerEmailData, service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerEmail")
-        } catch let parsingError{
-            print("error", parsingError)
-        }
-    }
     
-    task.resume()
+    let(data, _) = try await URLSession.shared.data(for: request)
+    
+    do{
+        let decoder = JSONDecoder()
+        let model = try decoder.decode(loginResponseWrapper.self, from: data)
+        
+        let token : String = model.result.token
+        let tokenData : Data = token.data(using: .utf8)!
+        
+        let playerEmail : String = model.result.user.email
+        let playerEmailData : Data = playerEmail.data(using: .utf8)!
+        
+        let playerId : String = String(model.result.user.id)
+        let playerIdData : Data = Data(from: playerId)
+        print(playerId)
+        
+        saveToken(token: tokenData, service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-token")
+        saveToken(token: playerIdData, service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerId")
+        saveToken(token: playerEmailData, service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerEmail")
+    } catch let parsingError{
+        print("error", parsingError)
+    }
 }
 
 
-func apiLogout(email: String){
+func apiLogout(email: String) async throws{
     let json : [String: Any] = ["email": email]
     
     let jsonData = try? JSONSerialization.data(withJSONObject: json)
@@ -66,19 +59,13 @@ func apiLogout(email: String){
     request.addValue("application/json", forHTTPHeaderField: "Accept")
 
     request.httpBody = jsonData
-
-    let task = URLSession.shared.dataTask(with: request){ data, response, error in
-        guard let data = data, error == nil else{
-            print(error?.localizedDescription ?? "no data")
-            return
-        }
-        print(String(data: data, encoding: .utf8) as Any)
-        deleteToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-token")
-        deleteToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerId")
-        deleteToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerEmail")
-    }
     
-    task.resume()
+    let(data, _) = try await URLSession.shared.data(for: request)
+    
+    print(String(data: data, encoding: .utf8) as Any)
+    deleteToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-token")
+    deleteToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerId")
+    deleteToken(service: "nl.bress.BRESS-TournooiPlanner", account: "BRESS-playerEmail")
 }
 
 func getUserToken() -> String{

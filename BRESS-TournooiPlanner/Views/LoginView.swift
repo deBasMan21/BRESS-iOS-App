@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @Binding var toHome: Bool
+    @Binding var toHome: NavigateToPage
     
     @State private var email: String = ""
     @State private var password: String = ""
@@ -39,8 +39,10 @@ struct LoginView: View {
                             .cornerRadius(5)
                         
                         Button{
-                            signIn(email: email, password: password)
-                            self.toHome = true
+                            Task.init{
+                                await signIn(email: email, password: password)
+                                self.toHome = .home
+                            }
                         } label: {
                             Text("Log in")
                                 .foregroundColor(Color.white)
@@ -63,12 +65,16 @@ struct LoginView: View {
     func startLoginPage(){
         let token = getUserToken()
         if token != " " {
-            toHome = true
+            toHome = .home
         }
     }
 
-    func signIn(email : String, password : String) {
-        apiLogin(email: email, password: password)
+    func signIn(email : String, password : String) async {
+        do{
+            try await apiLogin(email: email, password: password)
+        } catch let exception{
+            print(exception)
+        }
     }
 }
 
