@@ -17,7 +17,6 @@
 		EF69E9C22785934D0020C5C3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9C12785934D0020C5C3 /* AuthenticationService.swift */; };
 		EF69E9C52785963C0020C5C3 /* LoginResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9C42785963C0020C5C3 /* LoginResponseModels.swift */; };
 		EF69E9C727859C230020C5C3 /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9C627859C230020C5C3 /* KeyChainService.swift */; };
-		EF69E9CB2785E6F00020C5C3 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9CA2785E6F00020C5C3 /* DataExtension.swift */; };
 		EF69E9CD2785E72D0020C5C3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9CC2785E72D0020C5C3 /* HomeView.swift */; };
 		EF69E9CF2785E81D0020C5C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9CE2785E81D0020C5C3 /* ContentView.swift */; };
 		EF69E9D42786DF780020C5C3 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9D32786DF780020C5C3 /* GameView.swift */; };
@@ -30,6 +29,8 @@
 		EF69E9E6278724240020C5C3 /* DataExtension2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9E5278724240020C5C3 /* DataExtension2.swift */; };
 		EF69E9E8278724390020C5C3 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9E7278724390020C5C3 /* IntExtension.swift */; };
 		EF69E9EA278728F60020C5C3 /* PullRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9E9278728F60020C5C3 /* PullRefreshView.swift */; };
+		EF69E9EC2787355E0020C5C3 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9EB2787355E0020C5C3 /* RegisterView.swift */; };
+		EF69E9EE278738F70020C5C3 /* RegisterResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9ED278738F70020C5C3 /* RegisterResponseModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +64,6 @@
 		EF69E9C12785934D0020C5C3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		EF69E9C42785963C0020C5C3 /* LoginResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModels.swift; sourceTree = "<group>"; };
 		EF69E9C627859C230020C5C3 /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
-		EF69E9CA2785E6F00020C5C3 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		EF69E9CC2785E72D0020C5C3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EF69E9CE2785E81D0020C5C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF69E9D22786DF210020C5C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +77,8 @@
 		EF69E9E5278724240020C5C3 /* DataExtension2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension2.swift; sourceTree = "<group>"; };
 		EF69E9E7278724390020C5C3 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		EF69E9E9278728F60020C5C3 /* PullRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRefreshView.swift; sourceTree = "<group>"; };
+		EF69E9EB2787355E0020C5C3 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		EF69E9ED278738F70020C5C3 /* RegisterResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponseModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				EF69E9C42785963C0020C5C3 /* LoginResponseModels.swift */,
 				EF69E9D72786E5310020C5C3 /* GameResponseModels.swift */,
 				EF69E9DB2786F6370020C5C3 /* NavigationEnum.swift */,
+				EF69E9ED278738F70020C5C3 /* RegisterResponseModels.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				EF69E9DD2786FD9E0020C5C3 /* EnterScoreView.swift */,
 				EF69E9E12786FE510020C5C3 /* PopupExtension.swift */,
 				EF69E9E9278728F60020C5C3 /* PullRefreshView.swift */,
+				EF69E9EB2787355E0020C5C3 /* RegisterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,7 +206,6 @@
 		EF69E9C92785E6DF0020C5C3 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				EF69E9CA2785E6F00020C5C3 /* DataExtension.swift */,
 				EF69E9E5278724240020C5C3 /* DataExtension2.swift */,
 				EF69E9E7278724390020C5C3 /* IntExtension.swift */,
 			);
@@ -345,12 +348,13 @@
 				EF69E9CF2785E81D0020C5C3 /* ContentView.swift in Sources */,
 				EF69E9D62786E46A0020C5C3 /* NoGameView.swift in Sources */,
 				EF69E9DA2786E9DB0020C5C3 /* CurrentGameService.swift in Sources */,
-				EF69E9CB2785E6F00020C5C3 /* DataExtension.swift in Sources */,
 				EF69E9D42786DF780020C5C3 /* GameView.swift in Sources */,
+				EF69E9EC2787355E0020C5C3 /* RegisterView.swift in Sources */,
 				EF69E9E6278724240020C5C3 /* DataExtension2.swift in Sources */,
 				EF69E9C22785934D0020C5C3 /* AuthenticationService.swift in Sources */,
 				EF69E9E22786FE510020C5C3 /* PopupExtension.swift in Sources */,
 				EF69E9DC2786F6370020C5C3 /* NavigationEnum.swift in Sources */,
+				EF69E9EE278738F70020C5C3 /* RegisterResponseModels.swift in Sources */,
 				EF69E9E8278724390020C5C3 /* IntExtension.swift in Sources */,
 				EF69E9C727859C230020C5C3 /* KeyChainService.swift in Sources */,
 				EF69E9992784A13B0020C5C3 /* LoginView.swift in Sources */,

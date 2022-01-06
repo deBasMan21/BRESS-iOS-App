@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @Binding var toHome: NavigateToPage
+    @Binding var navigation: NavigateToPage
     
     @State private var email: String = ""
     @State private var password: String = ""
@@ -66,6 +66,17 @@ struct LoginView: View {
                         }.background(buttonColor)
                             .padding(.top, 15)
                             .disabled(email.isEmpty || password.isEmpty || disableButton)
+                        
+                        Button{
+                            navigation = .register
+                        } label: {
+                            Text("Nog geen account? Registreer hier")
+                                .foregroundColor(Color.white)
+                                .padding(5)
+                                .padding(.vertical, 10)
+                                .frame(maxWidth: .infinity)
+                        }.background(Color("AccentColor"))
+                            .padding(.top, 15)
 
                     }.padding(50)
                 )
@@ -79,7 +90,7 @@ struct LoginView: View {
     func startLoginPage(){
         let token = getUserToken()
         if token != " "{
-            toHome = .home
+            navigation = .home
         }
     }
 
@@ -87,7 +98,7 @@ struct LoginView: View {
         do{
             let success = try await apiLogin(email: email, password: password)
             if success{
-                self.toHome = .home
+                navigation = .home
             } else {
                 showError = true
                 disableButton = false

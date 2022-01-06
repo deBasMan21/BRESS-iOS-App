@@ -69,6 +69,41 @@ func apiLogout(email: String) async throws{
     deleteToken(service: "nl.bress.BRESS-TournooiPlanner-email", account: "BRESS-playerEmail")
 }
 
+func apiRegister(email: String, password: String) async throws -> Bool {
+    var returnValue : Bool = false
+    
+    let json : [String: Any] = ["email": email, "password": password]
+    
+    let jsonData = try? JSONSerialization.data(withJSONObject: json)
+    
+    let url = URL(string: "https://bress-api.azurewebsites.net/api/playerregister")!
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue("application/json", forHTTPHeaderField: "Accept")
+
+    request.httpBody = jsonData
+    
+    let(data, _) = try await URLSession.shared.data(for: request)
+    
+    do{
+        let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+        print(jsonResponse)
+        
+        let decoder = JSONDecoder()
+        let model = try decoder.decode(RegisterResponseWrapper.self, from: data)
+            
+        print(model.result.succeeded)
+        
+        returnValue = model.result.succeeded
+    } catch let parsingError{
+        print("error", parsingError)
+    }
+    
+    return returnValue
+}
+
 func getUserToken() -> String{
     let token: String = String(data: getToken(service: "nl.bress.BRESS-TournooiPlanner-token", account: "BRESS-token"), encoding: .utf8)!
     return token

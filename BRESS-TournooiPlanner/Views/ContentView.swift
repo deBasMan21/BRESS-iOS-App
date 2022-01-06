@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var homeView : NavigateToPage = .login;
+    @State var navigation : NavigateToPage = .login;
     
     var body: some View {
-        if homeView == .home{
-            HomeView(toHome: $homeView)
-        } else if homeView == .login{
-            LoginView(toHome: $homeView)
+        if navigation == .home{
+            HomeView(navigation: $navigation)
+        } else if navigation == .login{
+            LoginView(navigation: $navigation)
+        } else if navigation == .register {
+            RegisterView(navigation: $navigation)
         }
     }
 }

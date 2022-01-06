@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct HomeView: View {
-    @Binding var toHome : NavigateToPage
+    @Binding var navigation : NavigateToPage
     
     @State private var email: String = ""
     @State private var password: String = ""
@@ -111,7 +111,7 @@ struct HomeView: View {
     func signOut(email: String) async{
         do{
             try await apiLogout(email: email)
-            toHome = .login
+            navigation = .login
         }catch let exception{
             print(exception)
         }
