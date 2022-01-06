@@ -37,6 +37,7 @@ struct HomeView: View {
                                 .scaledToFit()
                                 .onTapGesture{
                                     Task.init{
+                                        hasGame = false
                                         await startHomePage()
                                     }
                                 }
