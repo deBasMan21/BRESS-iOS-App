@@ -29,6 +29,7 @@
 		EF69E9E22786FE510020C5C3 /* PopupExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9E12786FE510020C5C3 /* PopupExtension.swift */; };
 		EF69E9E6278724240020C5C3 /* DataExtension2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9E5278724240020C5C3 /* DataExtension2.swift */; };
 		EF69E9E8278724390020C5C3 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9E7278724390020C5C3 /* IntExtension.swift */; };
+		EF69E9EA278728F60020C5C3 /* PullRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9E9278728F60020C5C3 /* PullRefreshView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		EF69E9E12786FE510020C5C3 /* PopupExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupExtension.swift; sourceTree = "<group>"; };
 		EF69E9E5278724240020C5C3 /* DataExtension2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension2.swift; sourceTree = "<group>"; };
 		EF69E9E7278724390020C5C3 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		EF69E9E9278728F60020C5C3 /* PullRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRefreshView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				EF69E9D52786E46A0020C5C3 /* NoGameView.swift */,
 				EF69E9DD2786FD9E0020C5C3 /* EnterScoreView.swift */,
 				EF69E9E12786FE510020C5C3 /* PopupExtension.swift */,
+				EF69E9E9278728F60020C5C3 /* PullRefreshView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				EF69E9E8278724390020C5C3 /* IntExtension.swift in Sources */,
 				EF69E9C727859C230020C5C3 /* KeyChainService.swift in Sources */,
 				EF69E9992784A13B0020C5C3 /* LoginView.swift in Sources */,
+				EF69E9EA278728F60020C5C3 /* PullRefreshView.swift in Sources */,
 				EF69E9DE2786FD9E0020C5C3 /* EnterScoreView.swift in Sources */,
 				EF69E9972784A13B0020C5C3 /* BRESS_TournooiPlannerApp.swift in Sources */,
 			);

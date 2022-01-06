@@ -45,13 +45,24 @@ struct HomeView: View {
                     }.frame(height: 50)
             }
             
-            VStack{
-                if hasGame{
-                    GameView(game: currentGame, showPopUp: $showPopUp)
-                } else{
-                    NoGameView()
-                }
-            }.padding(20)
+            ScrollView{
+                PullToRefresh(coordinateSpaceName: "pullToRefresh", onRefresh: {
+                    Task.init{
+                        hasGame = false
+                        await startHomePage()
+                    }
+                })
+                
+                VStack{
+                    if hasGame{
+                        GameView(game: currentGame, showPopUp: $showPopUp)
+                    } else{
+                        NoGameView()
+                    }
+                }.padding(20)
+                    .coordinateSpace(name: "pullToRefresh")
+            }
+
             
             Spacer()
             
@@ -82,8 +93,6 @@ struct HomeView: View {
     }
     
     func startHomePage() async{
-        let userId = getUserId()
-        print("homepage ", userId)
         do{
             let game : Game? = try await getCurrentGame()
             if game != nil{

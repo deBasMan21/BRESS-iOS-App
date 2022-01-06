@@ -78,9 +78,7 @@ struct LoginView: View {
     
     func startLoginPage(){
         let token = getUserToken()
-        let userId = getUserId()
-        print("loginpage ", userId)
-        if token != " " {
+        if token != " "{
             toHome = .home
         }
     }
