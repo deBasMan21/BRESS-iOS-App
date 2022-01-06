@@ -9,8 +9,8 @@ import SwiftUI
 
 struct RegisterView: View {
     @Binding var navigation : NavigateToPage
+    @Binding var email : String
     
-    @State private var email: String = ""
     @State private var password: String = ""
     @State private var passwordConfirm: String = ""
     
@@ -109,14 +109,21 @@ struct RegisterView: View {
             if validPassword(string: password){
                 do{
                     let success = try await apiRegister(email: email, password: password)
-                    if success{
-                        navigation = .login
+                    
+                    if success.succeeded{
+                        if success.playerExists {
+                            navigation = .home
+                        } else {
+                            navigation = .createPlayer
+                        }
                     } else {
                         errorMessage = "Er is iets misgegaan bij het aanmaken.\nMisschien bestaat er al een account op dit email"
                         showError = true
                     }
                 } catch let exception{
                     print(exception)
+                    errorMessage = exception.localizedDescription
+                    showError = true
                 }
             } else {
                 errorMessage = "invalid password"

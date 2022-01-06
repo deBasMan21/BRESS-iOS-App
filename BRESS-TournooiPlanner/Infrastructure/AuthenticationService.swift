@@ -24,6 +24,9 @@ func apiLogin(email:String, password:String) async throws -> Bool {
     let(data, _) = try await URLSession.shared.data(for: request)
     
     do{
+        let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+        print(jsonResponse)
+        
         let decoder = JSONDecoder()
         let model = try decoder.decode(loginResponseWrapper.self, from: data)
         
@@ -69,8 +72,8 @@ func apiLogout(email: String) async throws{
     deleteToken(service: "nl.bress.BRESS-TournooiPlanner-email", account: "BRESS-playerEmail")
 }
 
-func apiRegister(email: String, password: String) async throws -> Bool {
-    var returnValue : Bool = false
+func apiRegister(email: String, password: String) async throws -> RegisterResponse {
+    var returnValue : RegisterResponse = RegisterResponse(succeeded: false, playerExists: false, token: "")
     
     let json : [String: Any] = ["email": email, "password": password]
     
@@ -94,9 +97,14 @@ func apiRegister(email: String, password: String) async throws -> Bool {
         let decoder = JSONDecoder()
         let model = try decoder.decode(RegisterResponseWrapper.self, from: data)
             
+        let token : String = model.result.token
+        let tokenData : Data = token.data(using: .utf8)!
+        
+        saveToken(token: tokenData, service: "nl.bress.BRESS-TournooiPlanner-token", account: "BRESS-token")
+        
         print(model.result.succeeded)
         
-        returnValue = model.result.succeeded
+        returnValue = model.result
     } catch let parsingError{
         print("error", parsingError)
     }

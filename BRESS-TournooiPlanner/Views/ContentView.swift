@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var navigation : NavigateToPage = .login;
+    @State var email : String = ""
     
     var body: some View {
         if navigation == .home{
@@ -16,7 +17,9 @@ struct ContentView: View {
         } else if navigation == .login{
             LoginView(navigation: $navigation)
         } else if navigation == .register {
-            RegisterView(navigation: $navigation)
+            RegisterView(navigation: $navigation, email: $email)
+        } else if navigation == .createPlayer{
+            CreatePlayerView(navigation: $navigation, email: $email)
         }
     }
 }

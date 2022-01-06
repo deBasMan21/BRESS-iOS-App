@@ -103,6 +103,9 @@ struct HomeView: View {
             } else {
                 hasGame = false
             }
+            
+            let levels = try await getAllSkillLevels()
+            print(levels)
         }catch let exception{
             print(exception)
         }
