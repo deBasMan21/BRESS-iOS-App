@@ -60,9 +60,13 @@ struct EnterScoreView: View {
                     
                     Picker(selection: $selectedSet3, label: Text("Set 3")){
                         if selectedSet1 == selectedSet2 {
-                            Text("Niemand").tag(0)
+                            Text("Niemand").tag(0).onAppear{
+                                selectedSet3 = 0
+                            }
                         } else {
-                            Text(game.player1.name).tag(1)
+                            Text(game.player1.name).tag(1).onAppear{
+                                selectedSet3 = 1
+                            }
                             Text(game.player2.name).tag(2)
                         }
                         
