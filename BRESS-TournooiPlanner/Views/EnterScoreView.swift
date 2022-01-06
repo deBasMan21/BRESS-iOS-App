@@ -60,7 +60,7 @@ struct EnterScoreView: View {
                     
                     Picker(selection: $selectedSet3, label: Text("Set 3")){
                         if selectedSet1 == selectedSet2 {
-                            Text("Niemand").tag(0).onAppear{
+                            Text("Niet gespeeld").tag(0).onAppear{
                                 selectedSet3 = 0
                             }
                         } else {

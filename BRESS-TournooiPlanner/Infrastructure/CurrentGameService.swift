@@ -10,7 +10,6 @@ import Foundation
 func getCurrentGame() async throws -> Game? {
     var returnValue : Game? = nil
     let playerId : Int = getUserId()
-    print("getgame ", playerId)
     
     let token = getUserToken()
     
@@ -43,7 +42,6 @@ func getCurrentGame() async throws -> Game? {
 func enterScore(score : [Bool], gameId : Int) async throws{
     let token = getUserToken()
     let playerId : Int = getUserId()
-    print(playerId)
     
     let json : [String: Any] = ["sets": score]
     
