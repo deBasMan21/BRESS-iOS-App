@@ -37,3 +37,27 @@ func getCurrentGame(playerId : Int) async throws -> Game? {
     
     return returnValue
 }
+
+func enterScore(score : [Bool], gameId : Int) async throws{
+    let token = getUserToken()
+    
+    let json : [String: Any] = ["sets": score]
+    
+    let jsonData = try? JSONSerialization.data(withJSONObject: json)
+    
+    let url = URL(string: "https://bress-api.azurewebsites.net/api/player/1/currentGame/\(gameId)")!
+    var request = URLRequest(url: url)
+    request.httpMethod = "PUT"
+    
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue("application/json", forHTTPHeaderField: "Accept")
+    
+    request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+    request.httpBody = jsonData
+    
+    let(data, _) = try await URLSession.shared.data(for: request)
+    
+    let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+    print(jsonResponse)
+}

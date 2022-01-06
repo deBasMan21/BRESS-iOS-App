@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct GameView: View {
-    @Binding var game : Game
+    var game : Game
+    @Binding var showPopUp : Bool
     
     var body: some View {
         VStack{
@@ -54,7 +55,7 @@ struct GameView: View {
                 
                 HStack{
                     Button{
-                        print("score invullen")
+                        self.showPopUp = true
                     } label: {
                         Text("Vul score in")
                             .foregroundColor(Color.white)
