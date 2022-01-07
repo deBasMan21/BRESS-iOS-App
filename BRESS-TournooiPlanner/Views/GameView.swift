@@ -17,6 +17,7 @@ struct GameView: View {
                 HStack{
                     Color.gray.overlay(
                         Text(game.gameStarted ? "Je huidige wedstrijd" : "Je volgende wedstrijd")
+                            .font(.system(size: 20, weight: .bold))
                             .foregroundColor(.white)
                     )
                 }.frame(height: 50)
