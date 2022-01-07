@@ -51,7 +51,6 @@ struct HomeView: View {
             ScrollView{
                 PullToRefresh(coordinateSpaceName: "pullToRefresh", onRefresh: {
                     Task.init{
-                        hasGame = false
                         await startHomePage()
                     }
                 })
@@ -103,6 +102,8 @@ struct HomeView: View {
     }
     
     func startHomePage() async{
+        hasGame = false
+        hasNextGame = false
         do{
             let game : Game? = try await getCurrentGame()
             if game != nil{
