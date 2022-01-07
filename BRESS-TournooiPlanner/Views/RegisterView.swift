@@ -112,7 +112,11 @@ struct RegisterView: View {
                     
                     if success.succeeded{
                         if success.playerExists {
-                            navigation = .home
+                            let loginSucces = try await apiLogin(email: email, password: password)
+                            
+                            if loginSucces {
+                                navigation = .home
+                            }
                         } else {
                             navigation = .createPlayer
                         }

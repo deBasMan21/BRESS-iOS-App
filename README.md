@@ -1,4 +1,4 @@
-# BRESS-API
+# BRESS-iOS-App
 This is the iOS application for the BRESS project.
 
 # Team
