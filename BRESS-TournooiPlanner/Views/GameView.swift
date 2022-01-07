@@ -42,7 +42,7 @@ struct GameView: View {
                         
                         Text(game.player2.name)
                         
-                        Text(game.field.name)
+                        Text(game.field?.name ?? "Nog geen veld bekend")
                     }.padding(.leading, 20)
                 }.padding(15)
                 

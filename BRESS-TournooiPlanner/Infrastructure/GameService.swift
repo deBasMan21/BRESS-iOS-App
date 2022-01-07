@@ -93,6 +93,6 @@ func getNextGame() async throws -> Game? {
 //    } catch let parsingError{
 //        print("error", parsingError)
 //    }
-    returnValue = Game(id: 1, score: "0 - 0", winner: 0, inQueue: true, gameStarted: false, field: Field(id: 1, name: "Zaal 1", isAvailable: true), player1: Player(id: 1, name: "Robin Schellius", email: "robin@schellius.nl", score: 10, pointBalance: 0, skillLevel: SkillLevel(id: 0, name: "Beginner"), fbToken: "Token"), player2: Player(id: 1, name: "Sies de Witte", email: "s.dewitte@bress.nl", score: 10, pointBalance: 0, skillLevel: SkillLevel(id: 0, name: "Beginner"), fbToken: "Token"));
+    returnValue = Game(id: 1, score: "0 - 0", winner: 0, inQueue: true, gameStarted: false, field: nil, player1: Player(id: 1, name: "Robin Schellius", email: "robin@schellius.nl", score: 10, pointBalance: 0, skillLevel: SkillLevel(id: 0, name: "Beginner"), fbToken: "Token"), player2: Player(id: 1, name: "Sies de Witte", email: "s.dewitte@bress.nl", score: 10, pointBalance: 0, skillLevel: SkillLevel(id: 0, name: "Beginner"), fbToken: "Token"));
     return returnValue
 }
