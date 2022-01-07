@@ -16,7 +16,7 @@ struct GameView: View {
             VStack(alignment: .center, spacing: 0, content: {
                 HStack{
                     Color.gray.overlay(
-                        Text("Je huidige wedstrijd")
+                        Text(game.gameStarted ? "Je huidige wedstrijd" : "Je volgende wedstrijd")
                             .foregroundColor(.white)
                     )
                 }.frame(height: 50)
@@ -45,28 +45,29 @@ struct GameView: View {
                     }.padding(.leading, 20)
                 }.padding(15)
                 
-                HStack{
-                    Color.accentColor.overlay(
-                        Text("Score")
-                            .foregroundColor(.white)
-                    )
-                }.frame(height: 50)
-                    .padding(0)
-                
-                HStack{
-                    Button{
-                        self.showPopUp = true
-                    } label: {
-                        Text("Vul score in")
-                            .foregroundColor(Color.white)
-                            .padding(5)
-                            .padding(.vertical, 10)
-                            .frame(maxWidth: .infinity)
-                    }.background(.black)
-                        .padding(.vertical, 15)
-                        .padding(.horizontal, 30)
+                if game.gameStarted{
+                    HStack{
+                        Color.accentColor.overlay(
+                            Text("Score")
+                                .foregroundColor(.white)
+                        )
+                    }.frame(height: 50)
+                        .padding(0)
+                    
+                    HStack{
+                        Button{
+                            self.showPopUp = true
+                        } label: {
+                            Text("Vul score in")
+                                .foregroundColor(Color.white)
+                                .padding(5)
+                                .padding(.vertical, 10)
+                                .frame(maxWidth: .infinity)
+                        }.background(.black)
+                            .padding(.vertical, 15)
+                            .padding(.horizontal, 30)
+                    }
                 }
-                
             })
             
         }.border(.gray, width: 1)

@@ -15,7 +15,9 @@ struct HomeView: View {
     @State private var password: String = ""
     
     @State private var hasGame : Bool = false
+    @State private var hasNextGame : Bool = false
     @State private var currentGame : Game = Game(id: 1, score: "0 - 0", winner: 0, inQueue: true, gameStarted: true, field: Field(id: 1, name: "Zaal 1", isAvailable: true), player1: Player(id: 1, name: "Robin Schellius", email: "robin@schellius.nl", score: 10, pointBalance: 0, skillLevel: SkillLevel(id: 0, name: "Beginner"), fbToken: "Token"), player2: Player(id: 1, name: "Sies de Witte", email: "s.dewitte@bress.nl", score: 10, pointBalance: 0, skillLevel: SkillLevel(id: 0, name: "Beginner"), fbToken: "Token"))
+    @State private var nextGame : Game = Game(id: 1, score: "0 - 0", winner: 0, inQueue: true, gameStarted: true, field: Field(id: 1, name: "Zaal 1", isAvailable: true), player1: Player(id: 1, name: "Robin Schellius", email: "robin@schellius.nl", score: 10, pointBalance: 0, skillLevel: SkillLevel(id: 0, name: "Beginner"), fbToken: "Token"), player2: Player(id: 1, name: "Sies de Witte", email: "s.dewitte@bress.nl", score: 10, pointBalance: 0, skillLevel: SkillLevel(id: 0, name: "Beginner"), fbToken: "Token"))
     
     @State private var showPopUp : Bool = false
     
@@ -57,7 +59,13 @@ struct HomeView: View {
                 VStack{
                     if hasGame{
                         GameView(game: currentGame, showPopUp: $showPopUp)
-                    } else{
+                    }
+                    
+                    if hasNextGame {
+                        GameView(game: nextGame, showPopUp: $showPopUp)
+                    }
+                    
+                    if !hasGame && !hasNextGame{
                         NoGameView()
                     }
                 }.padding(20)
@@ -98,11 +106,19 @@ struct HomeView: View {
             let game : Game? = try await getCurrentGame()
             if game != nil{
                 currentGame = game!
-                
                 hasGame = true
             } else {
                 hasGame = false
             }
+            
+            let nextGame : Game? = try await getNextGame()
+            if nextGame != nil{
+                self.nextGame = nextGame!
+                hasNextGame = true
+            } else {
+                hasNextGame = false
+            }
+            
         }catch let exception{
             print(exception)
         }
