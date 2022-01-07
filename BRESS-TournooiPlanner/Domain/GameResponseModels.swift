@@ -17,7 +17,7 @@ struct Game : Decodable{
     var winner: Int
     var inQueue : Bool
     var gameStarted : Bool
-    var field : Field
+    var field : Field?
     var player1 : Player
     var player2 : Player
 }
