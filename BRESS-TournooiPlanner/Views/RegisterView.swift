@@ -38,6 +38,7 @@ struct RegisterView: View {
                             .autocapitalization(.none)
                             .textContentType(.emailAddress)
                             .keyboardType(.emailAddress)
+                            .foregroundColor(.black)
                         
                         Text("Wachtwoord")
                             .foregroundColor(.black)
@@ -46,6 +47,7 @@ struct RegisterView: View {
                             .padding(5)
                             .background(Color.white)
                             .cornerRadius(5)
+                            .foregroundColor(.black)
                         
                         Text("Herhaal wachtwoord")
                             .foregroundColor(.black)
@@ -54,6 +56,7 @@ struct RegisterView: View {
                             .padding(5)
                             .background(Color.white)
                             .cornerRadius(5)
+                            .foregroundColor(.black)
                         
                         if showError{
                             Text(errorMessage)
