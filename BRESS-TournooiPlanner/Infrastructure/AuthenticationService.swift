@@ -6,9 +6,12 @@
 //
 
 import Foundation
+import Firebase
 
 func apiLogin(email:String, password:String) async throws -> Bool {
-    let json : [String: Any] = ["email": email, "password": password, "fbtoken": "token"]
+    let token = Messaging.messaging().fcmToken
+    
+    let json : [String: Any] = ["email": email, "password": password, "fbtoken": String(token ?? "")]
     
     let jsonData = try? JSONSerialization.data(withJSONObject: json)
     
