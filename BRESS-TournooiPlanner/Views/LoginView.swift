@@ -36,6 +36,7 @@ struct LoginView: View {
                             .autocapitalization(.none)
                             .textContentType(.emailAddress)
                             .keyboardType(.emailAddress)
+                            .foregroundColor(.black)
                         
                         Text("Wachtwoord")
                             .foregroundColor(.white)
@@ -44,6 +45,7 @@ struct LoginView: View {
                             .padding(5)
                             .background(Color.white)
                             .cornerRadius(5)
+                            .foregroundColor(.black)
                         
                         if showError{
                             Text("Verkeerde email of wachtwoord")
