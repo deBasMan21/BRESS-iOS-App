@@ -41,7 +41,7 @@ struct BottomPopupView<Content : View> : View {
             VStack{
                 Spacer()
                 content()
-                    .background(Color.white)
+                    .background(Color("ButtonTextBlack"))
                     .cornerRadius(radius: 16, corners: [.topLeft, .topRight])
             }
         }.edgesIgnoringSafeArea([.bottom])
