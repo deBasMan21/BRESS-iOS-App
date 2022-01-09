@@ -96,11 +96,11 @@ struct EnterScoreView: View {
                 }
             } label: {
                 Text("Bevestig score")
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color("ButtonTextBlack"))
                     .padding(5)
                     .padding(.vertical, 10)
                     .frame(maxWidth: .infinity)
-            }.background(Color.black)
+            }.background(Color("ButtonBlack"))
                 .padding(.vertical, 15)
                 .padding(.horizontal, 30)
                 .disabled(buttonClicked)
