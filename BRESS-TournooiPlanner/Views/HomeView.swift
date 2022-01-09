@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import Firebase
 
 struct HomeView: View {
     @Binding var navigation : NavigateToPage

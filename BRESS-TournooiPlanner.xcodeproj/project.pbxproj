@@ -36,6 +36,10 @@
 		EF69E9F4278749BB0020C5C3 /* SkillLevelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9F3278749BB0020C5C3 /* SkillLevelService.swift */; };
 		EF69E9F627874B2D0020C5C3 /* SkillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9F527874B2D0020C5C3 /* SkillLevel.swift */; };
 		EF69E9F827875F1E0020C5C3 /* CreatePlayerResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69E9F727875F1E0020C5C3 /* CreatePlayerResponseModels.swift */; };
+		EF69E9FA278B69970020C5C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF69E9F9278B69970020C5C3 /* GoogleService-Info.plist */; };
+		EF69E9FD278B6A330020C5C3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EF69E9FC278B6A330020C5C3 /* FirebaseAnalytics */; };
+		EF69E9FF278B6A330020C5C3 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = EF69E9FE278B6A330020C5C3 /* FirebaseMessaging */; };
+		EF69EA01278B6A4E0020C5C3 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69EA00278B6A4E0020C5C3 /* Delegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,9 @@
 		EF69E9F3278749BB0020C5C3 /* SkillLevelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevelService.swift; sourceTree = "<group>"; };
 		EF69E9F527874B2D0020C5C3 /* SkillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevel.swift; sourceTree = "<group>"; };
 		EF69E9F727875F1E0020C5C3 /* CreatePlayerResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerResponseModels.swift; sourceTree = "<group>"; };
+		EF69E9F9278B69970020C5C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF69EA00278B6A4E0020C5C3 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
+		EF70E0E7278B80EF008531F8 /* BRESS-TournooiPlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BRESS-TournooiPlanner.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +103,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF69E9FF278B6A330020C5C3 /* FirebaseMessaging in Frameworks */,
+				EF69E9FD278B6A330020C5C3 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +148,8 @@
 		EF69E9952784A13B0020C5C3 /* BRESS-TournooiPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				EF70E0E7278B80EF008531F8 /* BRESS-TournooiPlanner.entitlements */,
+				EF69E9F9278B69970020C5C3 /* GoogleService-Info.plist */,
 				EF69E9D22786DF210020C5C3 /* Info.plist */,
 				EF69E9C92785E6DF0020C5C3 /* Logic */,
 				EF69E9C82785E6790020C5C3 /* Views */,
@@ -147,6 +158,7 @@
 				EF69E9962784A13B0020C5C3 /* BRESS_TournooiPlannerApp.swift */,
 				EF69E99A2784A13D0020C5C3 /* Assets.xcassets */,
 				EF69E99C2784A13D0020C5C3 /* Preview Content */,
+				EF69EA00278B6A4E0020C5C3 /* Delegate.swift */,
 			);
 			path = "BRESS-TournooiPlanner";
 			sourceTree = "<group>";
@@ -243,6 +255,10 @@
 			dependencies = (
 			);
 			name = "BRESS-TournooiPlanner";
+			packageProductDependencies = (
+				EF69E9FC278B6A330020C5C3 /* FirebaseAnalytics */,
+				EF69E9FE278B6A330020C5C3 /* FirebaseMessaging */,
+			);
 			productName = "BRESS-TournooiPlanner";
 			productReference = EF69E9932784A13B0020C5C3 /* BRESS-TournooiPlanner.app */;
 			productType = "com.apple.product-type.application";
@@ -315,6 +331,9 @@
 				Base,
 			);
 			mainGroup = EF69E98A2784A13B0020C5C3;
+			packageReferences = (
+				EF69E9FB278B6A330020C5C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = EF69E9942784A13B0020C5C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -333,6 +352,7 @@
 			files = (
 				EF69E99E2784A13D0020C5C3 /* Preview Assets.xcassets in Resources */,
 				EF69E99B2784A13D0020C5C3 /* Assets.xcassets in Resources */,
+				EF69E9FA278B69970020C5C3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +393,7 @@
 				EF69E9E22786FE510020C5C3 /* PopupExtension.swift in Sources */,
 				EF69E9DC2786F6370020C5C3 /* NavigationEnum.swift in Sources */,
 				EF69E9EE278738F70020C5C3 /* RegisterResponseModels.swift in Sources */,
+				EF69EA01278B6A4E0020C5C3 /* Delegate.swift in Sources */,
 				EF69E9F4278749BB0020C5C3 /* SkillLevelService.swift in Sources */,
 				EF69E9E8278724390020C5C3 /* IntExtension.swift in Sources */,
 				EF69E9F22787477E0020C5C3 /* PlayerService.swift in Sources */,
@@ -538,6 +559,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BRESS-TournooiPlanner/BRESS-TournooiPlanner.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BRESS-TournooiPlanner/Preview Content\"";
@@ -551,7 +573,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -570,6 +592,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BRESS-TournooiPlanner/BRESS-TournooiPlanner.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BRESS-TournooiPlanner/Preview Content\"";
@@ -583,7 +606,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -733,6 +756,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EF69E9FB278B6A330020C5C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EF69E9FC278B6A330020C5C3 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF69E9FB278B6A330020C5C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		EF69E9FE278B6A330020C5C3 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF69E9FB278B6A330020C5C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EF69E98B2784A13B0020C5C3 /* Project object */;
 }

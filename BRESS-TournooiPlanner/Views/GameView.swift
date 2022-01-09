@@ -60,11 +60,11 @@ struct GameView: View {
                             self.showPopUp = true
                         } label: {
                             Text("Vul score in")
-                                .foregroundColor(Color.white)
+                                .foregroundColor(Color("ButtonTextBlack"))
                                 .padding(5)
                                 .padding(.vertical, 10)
                                 .frame(maxWidth: .infinity)
-                        }.background(.black)
+                        }.background(Color("ButtonBlack"))
                             .padding(.vertical, 15)
                             .padding(.horizontal, 30)
                     }

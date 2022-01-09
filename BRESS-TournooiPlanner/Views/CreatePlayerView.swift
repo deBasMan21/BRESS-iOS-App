@@ -38,6 +38,7 @@ struct CreatePlayerView: View {
                             .background(Color.white)
                             .cornerRadius(5)
                             .autocapitalization(.words)
+                            .foregroundColor(.black)
                         
                         Text("Niveau")
                             .foregroundColor(.black)
