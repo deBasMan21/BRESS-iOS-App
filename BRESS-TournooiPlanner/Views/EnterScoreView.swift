@@ -12,9 +12,7 @@ struct EnterScoreView: View {
     var refresh : () async -> Void
     var game : Game
     
-    @State private var selectedSet1 = true
-    @State private var selectedSet2 = true
-    @State private var selectedSet3 = 0
+    @State private var score : [[String]] = [["", "", ""], ["", "", ""]]
     
     @State private var buttonClicked = false
     
@@ -34,49 +32,90 @@ struct EnterScoreView: View {
             Image("logo-bress-orange")
             Text("Score invullen voor wedstrijd #\(game.id)").font(.system(size: 20, weight: .bold))
             Text("\(game.player1.name) tegen \(game.player2.name) in \(game.field!.name)")
-            Text("Geef per set aan wie er heeft gewonnen")
+            Text("Geef per set voor elke speler de score aan")
             
             VStack{
                 HStack{
                     Text("Set 1").padding(10)
+                    TextField(game.player1.name, text: $score[0][0])
+                        .padding(5)
+                        .background(Color("ButtonTextBlack"))
+                        .cornerRadius(5)
+                        .autocapitalization(.none)
+                        .textContentType(.oneTimeCode)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color("ButtonBlack"))
+
+                    Text("-")
                     
-                    Picker(selection: $selectedSet1, label: Text("Set 1")){
-                        Text(game.player1.name).tag(true)
-                        Text(game.player2.name).tag(false)
-                    }.pickerStyle(.segmented)
+                    TextField(game.player2.name, text: $score[1][0])
+                        .padding(5)
+                        .background(Color("ButtonTextBlack"))
+                        .cornerRadius(5)
+                        .autocapitalization(.none)
+                        .textContentType(.oneTimeCode)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color("ButtonBlack"))
                 }
                 
                 HStack{
                     Text("Set 2").padding(10)
                     
-                    Picker(selection: $selectedSet2, label: Text("Set 2")){
-                        Text(game.player1.name).tag(true)
-                        Text(game.player2.name).tag(false)
-                    }.pickerStyle(.segmented)
+                    TextField(game.player1.name, text: $score[0][1])
+                        .padding(5)
+                        .background(Color("ButtonTextBlack"))
+                        .cornerRadius(5)
+                        .autocapitalization(.none)
+                        .textContentType(.oneTimeCode)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color("ButtonBlack"))
+                    
+                    Text("-")
+                    
+                    TextField(game.player2.name, text: $score[1][1])
+                        .padding(5)
+                        .background(Color("ButtonTextBlack"))
+                        .cornerRadius(5)
+                        .autocapitalization(.none)
+                        .textContentType(.oneTimeCode)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color("ButtonBlack"))
                 }
                 
                 HStack{
                     Text("Set 3").padding(10)
                     
-                    Picker(selection: $selectedSet3, label: Text("Set 3")){
-                        if selectedSet1 == selectedSet2 {
-                            Text("Niet gespeeld").tag(0).onAppear{
-                                selectedSet3 = 0
-                            }
-                        } else {
-                            Text(game.player1.name).tag(1).onAppear{
-                                selectedSet3 = 1
-                            }
-                            Text(game.player2.name).tag(2)
-                        }
-                        
-                    }.pickerStyle(.segmented)
+                    TextField("\(game.player1.name)", text: $score[0][2])
+                        .padding(5)
+                        .background(Color("ButtonTextBlack"))
+                        .cornerRadius(5)
+                        .autocapitalization(.none)
+                        .textContentType(.oneTimeCode)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color("ButtonBlack"))
+                    
+                    Text("-")
+                    
+                    TextField(game.player2.name, text: $score[1][2])
+                        .padding(5)
+                        .background(Color("ButtonTextBlack"))
+                        .cornerRadius(5)
+                        .autocapitalization(.none)
+                        .textContentType(.oneTimeCode)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color("ButtonBlack"))
                 }
             }.padding(10)
                 .padding(.trailing, 20)
             
             if showError{
-                Text("Score is niet geldig. \n\(errorMessage)")
+                Text("\(errorMessage)")
                     .foregroundColor(Color.red)
                     .multilineTextAlignment(.center)
                     .padding(10)
@@ -84,14 +123,14 @@ struct EnterScoreView: View {
             
                 
             Button{
-                if isValidScore(){
+                if isValidScore() {
                     Task.init{
                         buttonClicked = true
                         await saveScore()
                         self.showPopUp = false
                         await refresh()
                     }
-                }else {
+                } else {
                     showError = true
                 }
             } label: {
@@ -105,51 +144,42 @@ struct EnterScoreView: View {
                 .padding(.horizontal, 30)
                 .disabled(buttonClicked)
         
-        }.padding(.bottom, 100)
+        }.padding(.bottom, 50)
     }
     
     func isValidScore() -> Bool {
-        var score : [Bool] = []
-        if selectedSet3 != 0{
-            score = [selectedSet1, selectedSet2, selectedSet3 == 1 ? true : false]
-        } else {
-            score = [selectedSet1, selectedSet2]
+        for playerScore in score {
+            for setScore in playerScore{
+                if setScore.isEmpty {
+                    errorMessage = "Er is een veld leeg"
+                    return false
+                }
+            }
         }
+
+        let scoreInInt : [[Int]] = [[Int(score[0][0])!,Int(score[0][1])!,Int(score[0][2])!], [Int(score[1][0])!,Int(score[1][1])!,Int(score[1][2])!]]
         
-        var player1Score = 0
-        var player2Score = 0
-        
-        for point in score {
-            if point{
-                player1Score += 1
-            } else {
-                player2Score += 1
+        for index in 0...2{
+            if scoreInInt[0][index] > 11 || scoreInInt[1][index] > 11 {
+                let diff = abs(scoreInInt[0][index] - scoreInInt[1][index])
+                if diff != 2 {
+                    errorMessage = "Er is precies een verschil van 2 nodig in set \(index + 1)"
+                    return false
+                }
+            } else if scoreInInt[0][index] == 11 || scoreInInt[1][index] == 11{
+                let diff = abs(scoreInInt[0][index] - scoreInInt[1][index])
+                if diff < 2 {
+                    errorMessage = "Er is minimaal een verschil van 2 nodig in set \(index + 1)"
+                    return false
+                }
             }
         }
         
-        if player2Score == 2 || player1Score == 2{
-            return true
-        } else{
-            if player1Score == 3 || player2Score == 3 {
-                errorMessage = "(Bij het winnen van de eerste 2 sets hoeft de derde niet ingevuld te worden)"
-            } else if player1Score == 1 && player2Score == 1 {
-                errorMessage = "(Er is geen winnaar, een van de spelers moet 2 sets winnen)"
-            } else {
-                errorMessage = ""
-            }
-            return false
-        }
+        return true
     }
     
     func saveScore() async {
         do{
-            var score : [Bool] = []
-            if selectedSet3 != 0{
-                score = [selectedSet1, selectedSet2, selectedSet3 == 1 ? true : false]
-            } else {
-                score = [selectedSet1, selectedSet2]
-            }
-            
             try await enterScore(score: score, gameId: game.id)
             showPopUp = false
         } catch let exception {
