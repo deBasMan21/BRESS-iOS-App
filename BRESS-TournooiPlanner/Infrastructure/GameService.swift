@@ -39,11 +39,11 @@ func getCurrentGame() async throws -> Game? {
     return returnValue
 }
 
-func enterScore(score : [Bool], gameId : Int) async throws{
+func enterScore(score : [[String]], gameId : Int) async throws{
     let token = getUserToken()
     let playerId : Int = getUserId()
     
-    let json : [String: Any] = ["sets": score]
+    let json : [String: Any] = ["scorePlayer1": score[0], "scorePlayer2": score[1]]
     
     let jsonData = try? JSONSerialization.data(withJSONObject: json)
     
