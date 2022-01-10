@@ -12,10 +12,6 @@ struct EnterScoreView: View {
     var refresh : () async -> Void
     var game : Game
     
-    @State private var selectedSet1 = true
-    @State private var selectedSet2 = true
-    @State private var selectedSet3 = 0
-    
     @State private var score : [[String]] = [["", "", ""], ["", "", ""]]
     
     @State private var buttonClicked = false
@@ -167,6 +163,19 @@ struct EnterScoreView: View {
                     errorMessage = "Er is een gelijk spel in een set"
                     return false
                 }
+            }
+        }
+        
+        let scoreInInt : [[Int]] = [[Int(score[0][0])!,Int(score[0][1])!,Int(score[0][2])!], [Int(score[1][0])!,Int(score[1][1])!,Int(score[1][2])!]]
+        
+        for index in 0...2{
+            if scoreInInt[0][index] >= 11 || scoreInInt[1][index] >= 11 {
+                let diff = abs(scoreInInt[0][index] - scoreInInt[1][index])
+                if diff < 2 {
+                    return false
+                }
+            } else {
+                return false
             }
         }
         
