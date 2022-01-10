@@ -50,10 +50,7 @@ struct EnterScoreView: View {
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color("ButtonBlack"))
-                        .onSubmit({
-                            print(score)
-                        })
-                    
+
                     Text("-")
                     
                     TextField(game.player2.name, text: $score[1][0])
@@ -64,7 +61,7 @@ struct EnterScoreView: View {
                         .textContentType(.oneTimeCode)
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.center)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("ButtonBlack"))
                 }
                 
                 HStack{
@@ -78,10 +75,7 @@ struct EnterScoreView: View {
                         .textContentType(.oneTimeCode)
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.center)
-                        .foregroundColor(.black)
-                        .onSubmit({
-                            print(score)
-                        })
+                        .foregroundColor(Color("ButtonBlack"))
                     
                     Text("-")
                     
@@ -93,7 +87,7 @@ struct EnterScoreView: View {
                         .textContentType(.oneTimeCode)
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.center)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("ButtonBlack"))
                 }
                 
                 HStack{
@@ -107,10 +101,7 @@ struct EnterScoreView: View {
                         .textContentType(.oneTimeCode)
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.center)
-                        .foregroundColor(.black)
-                        .onSubmit({
-                            print(score)
-                        })
+                        .foregroundColor(Color("ButtonBlack"))
                     
                     Text("-")
                     
@@ -122,7 +113,7 @@ struct EnterScoreView: View {
                         .textContentType(.oneTimeCode)
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.center)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("ButtonBlack"))
                 }
             }.padding(10)
                 .padding(.trailing, 20)
