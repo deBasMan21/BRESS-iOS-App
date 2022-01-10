@@ -156,16 +156,7 @@ struct EnterScoreView: View {
                 }
             }
         }
-        
-        for index in 0...2 {
-            if score[0][index] == score[1][index]{
-                if Int(score[0][index]) != 0 {
-                    errorMessage = "Er is een gelijk spel in set \(index + 1)"
-                    return false
-                }
-            }
-        }
-        
+
         let scoreInInt : [[Int]] = [[Int(score[0][0])!,Int(score[0][1])!,Int(score[0][2])!], [Int(score[1][0])!,Int(score[1][1])!,Int(score[1][2])!]]
         
         for index in 0...2{
@@ -189,7 +180,7 @@ struct EnterScoreView: View {
     
     func saveScore() async {
         do{
-//            try await enterScore(score: score, gameId: game.id)
+            try await enterScore(score: score, gameId: game.id)
             showPopUp = false
         } catch let exception {
             print(exception)
