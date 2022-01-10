@@ -42,9 +42,9 @@ struct BottomPopupView<Content : View> : View {
                 Spacer()
                 content()
                     .background(Color("ButtonTextBlack"))
-                    .cornerRadius(radius: 16, corners: [.topLeft, .topRight])
+                    .cornerRadius(radius: 16)
             }
-        }.edgesIgnoringSafeArea([.bottom])
+        }
             .animation(.easeInOut)
             .transition(.move(edge: .bottom))
     }
