@@ -89,6 +89,7 @@ func apiUpdatePlayer(name: String, skillLevel: Int) async throws -> Bool {
 func apiGetPlayer() async throws -> PlayerObj? {
     let token = getUserToken()
     let userId = getUserId()
+    print(userId)
     
     let url = URL(string: "\(apiURL)/player/\(userId)/get")!
     var request = URLRequest(url: url)
@@ -113,5 +114,5 @@ func apiGetPlayer() async throws -> PlayerObj? {
         print("error", parsingError)
     }
     
-    return PlayerObj(id: 1, name: "Sem", email: "", score: 0, pointBalance: 0, skillLevel: SkillLevelObj(id: 2, name: "Beginner"))
+    return nil
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct UpdatePlayerView: View {
     @Binding var showPopUp : Bool
     
-    @State var player : PlayerObj = PlayerObj(id: 1, name: "", email: "", score: 0, pointBalance: 0, skillLevel: SkillLevelObj(id: 1, name: "Beginner"))
+    @State var player : PlayerObj = PlayerObj(id: 1, name: "", email: "", skillLevel: SkillLevelObj(id: 1, name: "Beginner"))
     @State var levels : [SkillLevelObj] = []
     @State var skillLevel : Int = 0
     
@@ -30,6 +30,10 @@ struct UpdatePlayerView: View {
                 .font(.system(size: 20, weight: .bold))
                 .padding(.bottom, 10)
             
+            Text("Deze informatie zal vanaf het volgende tournooi bijgewerkt zijn.")
+                .multilineTextAlignment(.center)
+                .padding(.bottom, 20)
+            
             Text("Naam")
             
             TextField("Naam", text: $player.name)
@@ -39,8 +43,10 @@ struct UpdatePlayerView: View {
                 .autocapitalization(.words)
                 .foregroundColor(.black)
                 .multilineTextAlignment(.center)
+                .shadow(color: .black, radius: 1, x: 0, y: 0)
             
             Text("Niveau")
+                .padding(.top, 10)
             
             if(levels.count > 0){
                 Picker(selection: $skillLevel, label: Text("SkillLevel")){
@@ -77,7 +83,7 @@ struct UpdatePlayerView: View {
     func startUpdatePlayer() async {
         do{
             levels = try await getAllSkillLevels()
-            player = try await apiGetPlayer()!
+            player = try await apiGetPlayer() ?? player
             skillLevel = player.skillLevel.id
         } catch let exception {
             print(exception)
