@@ -15,7 +15,5 @@ struct PlayerObj : Decodable {
     var id : Int
     var name : String
     var email : String
-    var score : Int
-    var pointBalance: Int
     var skillLevel : SkillLevelObj
 }

@@ -40,6 +40,7 @@
 		EF69E9FD278B6A330020C5C3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EF69E9FC278B6A330020C5C3 /* FirebaseAnalytics */; };
 		EF69E9FF278B6A330020C5C3 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = EF69E9FE278B6A330020C5C3 /* FirebaseMessaging */; };
 		EF69EA01278B6A4E0020C5C3 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69EA00278B6A4E0020C5C3 /* Delegate.swift */; };
+		EF70E0E9278C964C008531F8 /* UpdatePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF70E0E8278C964C008531F8 /* UpdatePlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		EF69E9F9278B69970020C5C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF69EA00278B6A4E0020C5C3 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		EF70E0E7278B80EF008531F8 /* BRESS-TournooiPlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BRESS-TournooiPlanner.entitlements"; sourceTree = "<group>"; };
+		EF70E0E8278C964C008531F8 /* UpdatePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 				EF69E9E9278728F60020C5C3 /* PullRefreshView.swift */,
 				EF69E9EB2787355E0020C5C3 /* RegisterView.swift */,
 				EF69E9EF278744A70020C5C3 /* CreatePlayerView.swift */,
+				EF70E0E8278C964C008531F8 /* UpdatePlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				EF69E9F22787477E0020C5C3 /* PlayerService.swift in Sources */,
 				EF69E9C727859C230020C5C3 /* KeyChainService.swift in Sources */,
 				EF69E9992784A13B0020C5C3 /* LoginView.swift in Sources */,
+				EF70E0E9278C964C008531F8 /* UpdatePlayerView.swift in Sources */,
 				EF69E9EA278728F60020C5C3 /* PullRefreshView.swift in Sources */,
 				EF69E9DE2786FD9E0020C5C3 /* EnterScoreView.swift in Sources */,
 				EF69E9972784A13B0020C5C3 /* BRESS_TournooiPlannerApp.swift in Sources */,
