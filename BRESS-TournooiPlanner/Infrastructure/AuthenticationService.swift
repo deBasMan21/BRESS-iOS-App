@@ -8,6 +8,8 @@
 import Foundation
 import Firebase
 
+public let apiURL: String = "https://serverbuijsen.nl/api"
+
 func apiLogin(email:String, password:String) async throws -> Bool {
     let token = Messaging.messaging().fcmToken
     
@@ -15,7 +17,7 @@ func apiLogin(email:String, password:String) async throws -> Bool {
     
     let jsonData = try? JSONSerialization.data(withJSONObject: json)
     
-    let url = URL(string: "https://bress-api.azurewebsites.net/api/playerlogin")!
+    let url = URL(string: "\(apiURL)/playerlogin")!
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     
@@ -58,7 +60,7 @@ func apiLogout(email: String) async throws{
     
     let jsonData = try? JSONSerialization.data(withJSONObject: json)
     
-    let url = URL(string: "https://bress-api.azurewebsites.net/api/playerlogout")!
+    let url = URL(string: "\(apiURL)/playerlogout")!
     var request = URLRequest(url: url)
     request.httpMethod = "PUT"
     
@@ -82,7 +84,7 @@ func apiRegister(email: String, password: String) async throws -> RegisterRespon
     
     let jsonData = try? JSONSerialization.data(withJSONObject: json)
     
-    let url = URL(string: "https://bress-api.azurewebsites.net/api/playerregister")!
+    let url = URL(string: "\(apiURL)/playerregister")!
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     

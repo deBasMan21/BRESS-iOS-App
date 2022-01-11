@@ -10,7 +10,7 @@ import Foundation
 func getAllSkillLevels() async throws -> [SkillLevelObj] {
     let token = getUserToken()
     
-    let url = URL(string: "https://bress-api.azurewebsites.net/api/skilllevel")!
+    let url = URL(string: "\(apiURL)/skilllevel")!
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
     
