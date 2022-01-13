@@ -123,7 +123,7 @@ func getUserToken() -> String{
 }
 
 func getUserId() -> Int{
-    return Int(getToken(service: "nl.bress.BRESS-TournooiPlanner-id", account: "BRESS-playerId").uint8)
+    return Int(getToken(service: "nl.bress.BRESS-TournooiPlanner-id", account: "BRESS-playerId").uint16)
 }
 
 func getUserEmail() -> String{
