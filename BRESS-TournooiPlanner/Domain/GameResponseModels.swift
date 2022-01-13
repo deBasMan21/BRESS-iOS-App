@@ -30,15 +30,13 @@ struct Field : Decodable{
 
 struct Player : Decodable{
     var id : Int
-    var name : String
+    var firstName : String
+    var lastName : String
     var email: String
-    var score : Int
-    var pointBalance : Int
     var skillLevel : SkillLevel
-    var fbToken : String?
 }
 
-struct SkillLevel : Decodable{
+struct SkillLevel : Decodable, Identifiable{
     var id : Int
     var name : String
 }

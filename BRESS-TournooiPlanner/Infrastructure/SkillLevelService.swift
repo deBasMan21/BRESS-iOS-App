@@ -7,10 +7,10 @@
 
 import Foundation
 
-func getAllSkillLevels() async throws -> [SkillLevelObj] {
+func getAllSkillLevels() async throws -> [SkillLevel] {
     let token = getUserToken()
     
-    let url = URL(string: "https://bress-api.azurewebsites.net/api/skilllevel")!
+    let url = URL(string: "\(apiURL)/skilllevel")!
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
     
@@ -26,7 +26,7 @@ func getAllSkillLevels() async throws -> [SkillLevelObj] {
         print(jsonResponse)
         
         let decoder = JSONDecoder()
-        let model = try decoder.decode(SkillLevelObjWrapper.self, from: data)
+        let model = try decoder.decode(SkillLevelWrapper.self, from: data)
             
         return model.result
     } catch let parsingError{

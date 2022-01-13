@@ -16,10 +16,12 @@ struct HomeView: View {
     
     @State private var hasGame : Bool = false
     @State private var hasNextGame : Bool = false
-    @State private var currentGame : Game = Game(id: 1, score: "0 - 0", winner: 0, inQueue: true, gameStarted: false, field: Field(id: 1, name: "Zaal 1", isAvailable: true), player1: Player(id: 1, name: "Robin Schellius", email: "robin@schellius.nl", score: 10, pointBalance: 0, skillLevel: SkillLevel(id: 0, name: "Beginner"), fbToken: "Token"), player2: Player(id: 1, name: "Sies de Witte", email: "s.dewitte@bress.nl", score: 10, pointBalance: 0, skillLevel: SkillLevel(id: 0, name: "Beginner"), fbToken: "Token"))
-    @State private var nextGame : Game = Game(id: 1, score: "0 - 0", winner: 0, inQueue: true, gameStarted: false, field: Field(id: 1, name: "Zaal 1", isAvailable: true), player1: Player(id: 1, name: "Robin Schellius", email: "robin@schellius.nl", score: 10, pointBalance: 0, skillLevel: SkillLevel(id: 0, name: "Beginner"), fbToken: "Token"), player2: Player(id: 1, name: "Sies de Witte", email: "s.dewitte@bress.nl", score: 10, pointBalance: 0, skillLevel: SkillLevel(id: 0, name: "Beginner"), fbToken: "Token"))
+    @State private var currentGame : Game = Game(id: 1, score: "0 - 0", winner: 0, inQueue: true, gameStarted: false, field: Field(id: 1, name: "Zaal 1", isAvailable: true), player1: Player(id: 1, firstName: "Robin Schellius", lastName: "", email: "robin@schellius.nl", skillLevel: SkillLevel(id: 0, name: "Beginner")), player2: Player(id: 1, firstName: "Sies de Witte", lastName: "", email: "s.dewitte@bress.nl", skillLevel: SkillLevel(id: 0, name: "Beginner")))
+    
+    @State private var nextGame : Game = Game(id: 1, score: "0 - 0", winner: 0, inQueue: true, gameStarted: false, field: Field(id: 1, name: "Zaal 1", isAvailable: true), player1: Player(id: 1, firstName: "Robin Schellius", lastName: "", email: "robin@schellius.nl", skillLevel: SkillLevel(id: 0, name: "Beginner")), player2: Player(id: 1, firstName: "Sies de Witte", lastName: "", email: "s.dewitte@bress.nl", skillLevel: SkillLevel(id: 0, name: "Beginner")))
     
     @State private var showPopUp : Bool = false
+    @State private var showUpdatePlayer : Bool = false
     
     var body: some View {
         VStack{
@@ -34,13 +36,13 @@ struct HomeView: View {
                                 
                             Spacer()
                             
-                            Image("refresh")
+                            Image("user")
                                 .resizable()
                                 .scaledToFit()
                                 .onTapGesture{
                                     Task.init{
-                                        hasGame = false
-                                        await startHomePage()
+                                        showUpdatePlayer = true
+                                        showPopUp = true
                                     }
                                 }
                         }.padding(.vertical, 10)
@@ -96,7 +98,13 @@ struct HomeView: View {
             }
         }).popup(isPresented: $showPopUp){
             BottomPopupView{
-                EnterScoreView(showPopUp: $showPopUp, refresh: startHomePage, game: currentGame)
+                if showUpdatePlayer{
+                    UpdatePlayerView(showPopUp: $showPopUp).onDisappear(perform: {
+                        self.showUpdatePlayer = false
+                    })
+                } else {
+                    EnterScoreView(showPopUp: $showPopUp, refresh: startHomePage, game: currentGame)
+                }
             }
         }
     }

@@ -13,7 +13,7 @@ func getCurrentGame() async throws -> Game? {
     
     let token = getUserToken()
     
-    let url = URL(string: "https://bress-api.azurewebsites.net/api/player/\(playerId)/currentGame")!
+    let url = URL(string: "\(apiURL)/player/\(playerId)/currentGame")!
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
     
@@ -47,7 +47,7 @@ func enterScore(score : [[String]], gameId : Int) async throws{
     
     let jsonData = try? JSONSerialization.data(withJSONObject: json)
     
-    let url = URL(string: "https://bress-api.azurewebsites.net/api/player/\(playerId)/currentGame/\(gameId)")!
+    let url = URL(string: "\(apiURL)/player/\(playerId)/currentGame/\(gameId)")!
     var request = URLRequest(url: url)
     request.httpMethod = "PUT"
     
@@ -71,7 +71,7 @@ func getNextGame() async throws -> Game? {
 
     let token = getUserToken()
 
-    let url = URL(string: "https://bress-api.azurewebsites.net/api/player/\(playerId)/nextGame")!
+    let url = URL(string: "\(apiURL)/player/\(playerId)/nextGame")!
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
 

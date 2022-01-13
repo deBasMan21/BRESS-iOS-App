@@ -7,14 +7,14 @@
 
 import Foundation
 
-func apiCreatePlayer(email: String, name: String, skillLevel: Int) async throws -> Bool {
+func apiCreatePlayer(email: String, firstName: String, lastName: String, skillLevel: Int) async throws -> Bool {
     let token = getUserToken()
     
-    let json : [String: Any] = ["email": email, "name": name, "skillLevelId": skillLevel]
+    let json : [String: Any] = ["email": email, "firstName": firstName, "lastName": lastName, "skillLevelId": skillLevel]
     
     let jsonData = try? JSONSerialization.data(withJSONObject: json)
     
-    let url = URL(string: "https://bress-api.azurewebsites.net/api/player")!
+    let url = URL(string: "\(apiURL)/player")!
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     
@@ -49,4 +49,70 @@ func apiCreatePlayer(email: String, name: String, skillLevel: Int) async throws 
     }
     
     return false
+}
+
+func apiUpdatePlayer(firstName: String, lastName : String, skillLevel: Int) async throws -> Bool {
+    let token = getUserToken()
+    let playerId = getUserId()
+    
+    let json : [String: Any] = ["firstName": firstName, "lastName": lastName, "skillLevelId": skillLevel]
+    
+    print(json)
+    
+    let jsonData = try? JSONSerialization.data(withJSONObject: json)
+    
+    let url = URL(string: "\(apiURL)/player/\(playerId)/update")!
+    var request = URLRequest(url: url)
+    request.httpMethod = "PUT"
+    
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue("application/json", forHTTPHeaderField: "Accept")
+    
+    request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+    
+    request.httpBody = jsonData
+    
+    let(data, _) = try await URLSession.shared.data(for: request)
+    
+    do{
+        let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+        print(jsonResponse)
+        
+        return true
+    } catch let parsingError{
+        print("error", parsingError)
+    }
+    
+    return false
+}
+
+func apiGetPlayer() async throws -> Player? {
+    let token = getUserToken()
+    let userId = getUserId()
+    print(userId)
+    
+    let url = URL(string: "\(apiURL)/player/\(userId)/get")!
+    var request = URLRequest(url: url)
+    request.httpMethod = "GET"
+    
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue("application/json", forHTTPHeaderField: "Accept")
+    
+    request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+    
+    let(data, _) = try await URLSession.shared.data(for: request)
+    
+    do{
+        let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+        print(jsonResponse)
+        
+        let decoder = JSONDecoder()
+        let model = try decoder.decode(PlayerWrapper.self, from: data)
+        
+        return model.result
+    } catch let parsingError{
+        print("error", parsingError)
+    }
+    
+    return nil
 }
