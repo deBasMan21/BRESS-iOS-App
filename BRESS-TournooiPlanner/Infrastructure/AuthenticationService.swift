@@ -111,6 +111,20 @@ func apiRegister(email: String, password: String) async throws -> RegisterRespon
         
         returnValue = model.result
     } catch let parsingError{
+        do{
+            let decoder = JSONDecoder()
+            let model = try decoder.decode(ErrorResponse.self, from: data)
+            
+            print(model)
+            
+            if model.errorCode == 400{
+                returnValue = RegisterResponse(succeeded: false, playerExists: true, token: "null")
+            }
+            
+        } catch let exception{
+            print("error", exception)
+        }
+        
         print("error", parsingError)
     }
     

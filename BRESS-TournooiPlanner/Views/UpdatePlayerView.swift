@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UpdatePlayerView: View {
     @Binding var showPopUp : Bool
+    @Binding var showLoader: Bool
     
     @State var player : Player = Player(id: 1, firstName: "", lastName: "", email: "", skillLevel: SkillLevel(id: 1, name: "Beginner"))
     @State var levels : [SkillLevel] = []
@@ -39,7 +40,7 @@ struct UpdatePlayerView: View {
             VStack{
                 Text("Voornaam")
                 
-                TextField("Voornaam", text: $player.lastName)
+                TextField("Voornaam", text: $player.firstName)
                     .padding(5)
                     .background(Color.white)
                     .cornerRadius(5)
@@ -50,7 +51,7 @@ struct UpdatePlayerView: View {
                 
                 Text("Achternaam")
                 
-                TextField("Achternaam", text: $player.firstName)
+                TextField("Achternaam", text: $player.lastName)
                     .padding(5)
                     .background(Color.white)
                     .cornerRadius(5)
@@ -111,9 +112,11 @@ struct UpdatePlayerView: View {
     
     func updatePlayer() async {
         do{
+            showLoader = true
             let result = try await apiUpdatePlayer(firstName: player.firstName, lastName: player.lastName, skillLevel: skillLevel)
             if result {
                 showPopUp = false
+                showLoader = false
             }
         } catch let exception {
             print(exception)

@@ -63,6 +63,7 @@ struct RegisterView: View {
                                 .foregroundColor(Color.red)
                                 .multilineTextAlignment(.center)
                                 .padding(10)
+                                .lineLimit(nil)
                         }
                         
                         Button{
@@ -124,7 +125,11 @@ struct RegisterView: View {
                             navigation = .createPlayer
                         }
                     } else {
-                        errorMessage = "Er is iets misgegaan bij het aanmaken.\nMisschien bestaat er al een account op dit email"
+                        if success.playerExists {
+                            errorMessage = "Er bestaat al een account op dit email"
+                        } else {
+                            errorMessage = "Er is iets misgegaan bij het aanmaken."
+                        }
                         showError = true
                     }
                 } catch let exception{

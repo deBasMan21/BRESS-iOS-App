@@ -41,6 +41,7 @@
 		EF69E9FF278B6A330020C5C3 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = EF69E9FE278B6A330020C5C3 /* FirebaseMessaging */; };
 		EF69EA01278B6A4E0020C5C3 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69EA00278B6A4E0020C5C3 /* Delegate.swift */; };
 		EF70E0E9278C964C008531F8 /* UpdatePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF70E0E8278C964C008531F8 /* UpdatePlayerView.swift */; };
+		EF92BCEB2795AA9600FEE556 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF92BCEA2795AA9600FEE556 /* ErrorResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		EF69EA00278B6A4E0020C5C3 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		EF70E0E7278B80EF008531F8 /* BRESS-TournooiPlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BRESS-TournooiPlanner.entitlements"; sourceTree = "<group>"; };
 		EF70E0E8278C964C008531F8 /* UpdatePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePlayerView.swift; sourceTree = "<group>"; };
+		EF92BCEA2795AA9600FEE556 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				EF69E9ED278738F70020C5C3 /* RegisterResponseModels.swift */,
 				EF69E9F527874B2D0020C5C3 /* SkillLevel.swift */,
 				EF69E9F727875F1E0020C5C3 /* CreatePlayerResponseModels.swift */,
+				EF92BCEA2795AA9600FEE556 /* ErrorResponse.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				EF69E9992784A13B0020C5C3 /* LoginView.swift in Sources */,
 				EF70E0E9278C964C008531F8 /* UpdatePlayerView.swift in Sources */,
 				EF69E9EA278728F60020C5C3 /* PullRefreshView.swift in Sources */,
+				EF92BCEB2795AA9600FEE556 /* ErrorResponse.swift in Sources */,
 				EF69E9DE2786FD9E0020C5C3 /* EnterScoreView.swift in Sources */,
 				EF69E9972784A13B0020C5C3 /* BRESS_TournooiPlannerApp.swift in Sources */,
 			);
@@ -575,8 +579,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -587,7 +591,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -608,8 +612,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -620,7 +624,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

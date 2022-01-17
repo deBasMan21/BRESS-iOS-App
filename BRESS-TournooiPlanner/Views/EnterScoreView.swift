@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EnterScoreView: View {
     @Binding var showPopUp : Bool
+    @Binding var showLoader: Bool
     var refresh : () async -> Void
     var game : Game
     
@@ -148,16 +149,53 @@ struct EnterScoreView: View {
     }
     
     func isValidScore() -> Bool {
-        for playerScore in score {
-            for setScore in playerScore{
-                if setScore.isEmpty {
+//        for playerScore in score {
+//            for setScore in playerScore{
+//                if setScore.isEmpty {
+//                    errorMessage = "Er is een veld leeg"
+//                    return false
+//                }
+//            }
+//        }
+        for index in 0...1 {
+            for j in 0...1{
+                if score[index][j].isEmpty{
                     errorMessage = "Er is een veld leeg"
                     return false
                 }
             }
         }
+        
+        var setWins : [Bool?] = [nil, nil, nil]
+        for index in 0...2 {
+            if Int(score[0][index]) != nil && Int(score[1][index]) != nil {
+                let score0 = Int(score[0][index])!
+                let score1 = Int(score[1][index])!
+                if score0 > score1 {
+                    setWins[index] = true
+                } else if score0 < score1{
+                    setWins[index] = false
+                }
+            }
+        }
+        
+        var scorePlayer1 = 0
+        var scorePlayer2 = 0
+        
+        for winner in setWins {
+            if winner == true{
+                scorePlayer1 += 1
+            } else if winner == false{
+                scorePlayer2 += 1
+            }
+        }
+        
+        if scorePlayer1 != 2 && scorePlayer2 != 2 {
+            errorMessage = "Een speler moet minimaal 2 sets winnen"
+            return false
+        }
 
-        let scoreInInt : [[Int]] = [[Int(score[0][0])!,Int(score[0][1])!,Int(score[0][2])!], [Int(score[1][0])!,Int(score[1][1])!,Int(score[1][2])!]]
+        let scoreInInt : [[Int]] = [[Int(score[0][0])!,Int(score[0][1])!,Int(score[0][2]) ?? 0], [Int(score[1][0])!,Int(score[1][1])!,Int(score[1][2]) ?? 0]]
         
         for index in 0...2{
             if scoreInInt[0][index] > 11 || scoreInInt[1][index] > 11 {
@@ -180,8 +218,10 @@ struct EnterScoreView: View {
     
     func saveScore() async {
         do{
+            showLoader = true
             try await enterScore(score: score, gameId: game.id)
             showPopUp = false
+            showLoader = false
         } catch let exception {
             print(exception)
         }
