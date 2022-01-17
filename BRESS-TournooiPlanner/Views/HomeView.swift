@@ -22,6 +22,7 @@ struct HomeView: View {
     
     @State private var showPopUp : Bool = false
     @State private var showUpdatePlayer : Bool = false
+    @State private var showLoader: Bool = false
     
     var body: some View {
         VStack{
@@ -97,15 +98,15 @@ struct HomeView: View {
                 
             }
         }).popup(isPresented: $showPopUp){
-            BottomPopupView{
+            BottomPopupView(content: {
                 if showUpdatePlayer{
-                    UpdatePlayerView(showPopUp: $showPopUp).onDisappear(perform: {
+                    UpdatePlayerView(showPopUp: $showPopUp, showLoader: $showLoader).onDisappear(perform: {
                         self.showUpdatePlayer = false
                     })
                 } else {
-                    EnterScoreView(showPopUp: $showPopUp, refresh: startHomePage, game: currentGame)
+                    EnterScoreView(showPopUp: $showPopUp, showLoader: $showLoader, refresh: startHomePage, game: currentGame)
                 }
-            }
+            }, showLoader: $showLoader)
         }
     }
     
