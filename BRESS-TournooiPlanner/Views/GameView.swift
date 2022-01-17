@@ -38,9 +38,9 @@ struct GameView: View {
                         Text("Locatie:")
                     }
                     VStack(alignment: .leading){
-                        Text(game.player1.name)
+                        Text("\(game.player1.firstName) \(game.player1.lastName)")
                         
-                        Text(game.player2.name)
+                        Text("\(game.player2.firstName) \(game.player2.lastName)")
                         
                         Text(game.field?.name ?? "Nog geen veld bekend")
                     }.padding(.leading, 20)

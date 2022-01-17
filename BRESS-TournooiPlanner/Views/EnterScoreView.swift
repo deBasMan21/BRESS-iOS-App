@@ -31,13 +31,13 @@ struct EnterScoreView: View {
             
             Image("logo-bress-orange")
             Text("Score invullen voor wedstrijd #\(game.id)").font(.system(size: 20, weight: .bold))
-            Text("\(game.player1.name) tegen \(game.player2.name) in \(game.field!.name)")
+            Text("\(game.player1.firstName) tegen \(game.player2.firstName) in \(game.field!.name)")
             Text("Geef per set voor elke speler de score aan")
             
             VStack{
                 HStack{
                     Text("Set 1").padding(10)
-                    TextField(game.player1.name, text: $score[0][0])
+                    TextField(game.player1.firstName, text: $score[0][0])
                         .padding(5)
                         .background(Color("ButtonTextBlack"))
                         .cornerRadius(5)
@@ -49,7 +49,7 @@ struct EnterScoreView: View {
 
                     Text("-")
                     
-                    TextField(game.player2.name, text: $score[1][0])
+                    TextField(game.player2.firstName, text: $score[1][0])
                         .padding(5)
                         .background(Color("ButtonTextBlack"))
                         .cornerRadius(5)
@@ -63,7 +63,7 @@ struct EnterScoreView: View {
                 HStack{
                     Text("Set 2").padding(10)
                     
-                    TextField(game.player1.name, text: $score[0][1])
+                    TextField(game.player1.firstName, text: $score[0][1])
                         .padding(5)
                         .background(Color("ButtonTextBlack"))
                         .cornerRadius(5)
@@ -75,7 +75,7 @@ struct EnterScoreView: View {
                     
                     Text("-")
                     
-                    TextField(game.player2.name, text: $score[1][1])
+                    TextField(game.player2.firstName, text: $score[1][1])
                         .padding(5)
                         .background(Color("ButtonTextBlack"))
                         .cornerRadius(5)
@@ -89,7 +89,7 @@ struct EnterScoreView: View {
                 HStack{
                     Text("Set 3").padding(10)
                     
-                    TextField("\(game.player1.name)", text: $score[0][2])
+                    TextField("\(game.player1.firstName)", text: $score[0][2])
                         .padding(5)
                         .background(Color("ButtonTextBlack"))
                         .cornerRadius(5)
@@ -101,7 +101,7 @@ struct EnterScoreView: View {
                     
                     Text("-")
                     
-                    TextField(game.player2.name, text: $score[1][2])
+                    TextField(game.player2.firstName, text: $score[1][2])
                         .padding(5)
                         .background(Color("ButtonTextBlack"))
                         .cornerRadius(5)

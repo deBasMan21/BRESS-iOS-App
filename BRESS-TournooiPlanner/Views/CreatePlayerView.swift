@@ -11,9 +11,10 @@ struct CreatePlayerView: View {
     @Binding var navigation : NavigateToPage
     @Binding var email : String
     
-    @State private var levels: [SkillLevelObj] = []
+    @State private var levels: [SkillLevel] = []
     
-    @State private var name: String = ""
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
     @State private var skillLevel: Int = 0
     
     @State private var showError: Bool = false
@@ -30,10 +31,20 @@ struct CreatePlayerView: View {
                         Image("logo-bress-orange")
                             .padding(.bottom, 15)
                         
-                        Text("Naam")
+                        Text("Voornaam")
                             .foregroundColor(.black)
                         
-                        TextField("Naam", text: $name)
+                        TextField("Voornaam", text: $firstName)
+                            .padding(5)
+                            .background(Color.white)
+                            .cornerRadius(5)
+                            .autocapitalization(.words)
+                            .foregroundColor(.black)
+                        
+                        Text("Achternaam")
+                            .foregroundColor(.black)
+                        
+                        TextField("Achternaam", text: $lastName)
                             .padding(5)
                             .background(Color.white)
                             .cornerRadius(5)
@@ -74,7 +85,7 @@ struct CreatePlayerView: View {
                                 .frame(maxWidth: .infinity)
                         }.background(buttonColor)
                             .padding(.top, 15)
-                            .disabled(name.isEmpty || disableButton)
+                            .disabled(firstName.isEmpty || lastName.isEmpty || disableButton)
 
                     }.padding(50)
                 )
@@ -86,7 +97,7 @@ struct CreatePlayerView: View {
     }
     
     var buttonColor: Color{
-        return name.isEmpty || disableButton ? .gray : .accentColor
+        return firstName.isEmpty || lastName.isEmpty || disableButton ? .gray : .accentColor
     }
     
     func startCreatePlayerPage() async {
@@ -100,7 +111,7 @@ struct CreatePlayerView: View {
 
     func createPlayer() async {
         do{
-            let success = try await apiCreatePlayer(email: email, name: name, skillLevel: skillLevel)
+            let success = try await apiCreatePlayer(email: email, firstName: firstName, lastName: lastName, skillLevel: skillLevel)
             if success {
                 navigation = .home
             } else {

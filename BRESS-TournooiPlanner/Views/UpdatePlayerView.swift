@@ -10,9 +10,11 @@ import SwiftUI
 struct UpdatePlayerView: View {
     @Binding var showPopUp : Bool
     
-    @State var player : PlayerObj = PlayerObj(id: 1, name: "", email: "", skillLevel: SkillLevelObj(id: 1, name: "Beginner"))
-    @State var levels : [SkillLevelObj] = []
+    @State var player : Player = Player(id: 1, firstName: "", lastName: "", email: "", skillLevel: SkillLevel(id: 1, name: "Beginner"))
+    @State var levels : [SkillLevel] = []
     @State var skillLevel : Int = 0
+    
+    @State var disableButton: Bool = false
     
     var body: some View {
         VStack{
@@ -34,32 +36,46 @@ struct UpdatePlayerView: View {
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 20)
             
-            Text("Naam")
-            
-            TextField("Naam", text: $player.name)
-                .padding(5)
-                .background(Color.white)
-                .cornerRadius(5)
-                .autocapitalization(.words)
-                .foregroundColor(.black)
-                .multilineTextAlignment(.center)
-                .shadow(color: .black, radius: 1, x: 0, y: 0)
-            
-            Text("Niveau")
-                .padding(.top, 10)
-            
-            if(levels.count > 0){
-                Picker(selection: $skillLevel, label: Text("SkillLevel")){
-                    ForEach(levels){item in
-                        Text(item.name).tag(item.id)
-                    }
-                }.pickerStyle(.segmented)
-                    .onAppear(perform: {
-                        skillLevel = levels[0].id
-                    })
+            VStack{
+                Text("Voornaam")
+                
+                TextField("Voornaam", text: $player.lastName)
+                    .padding(5)
+                    .background(Color.white)
+                    .cornerRadius(5)
+                    .autocapitalization(.words)
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.center)
+                    .shadow(color: .black, radius: 1, x: 0, y: 0)
+                
+                Text("Achternaam")
+                
+                TextField("Achternaam", text: $player.firstName)
+                    .padding(5)
+                    .background(Color.white)
+                    .cornerRadius(5)
+                    .autocapitalization(.words)
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.center)
+                    .shadow(color: .black, radius: 1, x: 0, y: 0)
+                
+                Text("Niveau")
+                    .padding(.top, 10)
+                
+                if(levels.count > 0){
+                    Picker(selection: $skillLevel, label: Text("SkillLevel")){
+                        ForEach(levels){item in
+                            Text(item.name).tag(item.id)
+                        }
+                    }.pickerStyle(.segmented)
+                        .onAppear(perform: {
+                            skillLevel = levels[0].id
+                        })
+                }
             }
             
             Button{
+                disableButton = true
                 Task.init{
                     await updatePlayer()
                 }
@@ -72,6 +88,8 @@ struct UpdatePlayerView: View {
             }.background(Color("ButtonBlack"))
                 .padding(.vertical, 30)
                 .padding(.horizontal, 30)
+                .disabled(player.firstName.isEmpty || player.lastName.isEmpty || disableButton)
+            
         }.padding(30)
             .onAppear(perform: {
                 Task.init{
@@ -79,6 +97,7 @@ struct UpdatePlayerView: View {
                 }
             })
     }
+
     
     func startUpdatePlayer() async {
         do{
@@ -92,7 +111,7 @@ struct UpdatePlayerView: View {
     
     func updatePlayer() async {
         do{
-            let result = try await apiUpdatePlayer(name: player.name, skillLevel: skillLevel)
+            let result = try await apiUpdatePlayer(firstName: player.firstName, lastName: player.lastName, skillLevel: skillLevel)
             if result {
                 showPopUp = false
             }

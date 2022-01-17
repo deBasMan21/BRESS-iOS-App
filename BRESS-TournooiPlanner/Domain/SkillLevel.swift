@@ -7,11 +7,6 @@
 
 import Foundation
 
-struct SkillLevelObj : Decodable, Identifiable {
-    var id : Int
-    var name : String
-}
-
-struct SkillLevelObjWrapper : Decodable {
-    var result : [SkillLevelObj]
+struct SkillLevelWrapper : Decodable {
+    var result : [SkillLevel]
 }

@@ -7,10 +7,10 @@
 
 import Foundation
 
-func apiCreatePlayer(email: String, name: String, skillLevel: Int) async throws -> Bool {
+func apiCreatePlayer(email: String, firstName: String, lastName: String, skillLevel: Int) async throws -> Bool {
     let token = getUserToken()
     
-    let json : [String: Any] = ["email": email, "name": name, "skillLevelId": skillLevel]
+    let json : [String: Any] = ["email": email, "firstName": firstName, "lastName": lastName, "skillLevelId": skillLevel]
     
     let jsonData = try? JSONSerialization.data(withJSONObject: json)
     
@@ -51,11 +51,11 @@ func apiCreatePlayer(email: String, name: String, skillLevel: Int) async throws 
     return false
 }
 
-func apiUpdatePlayer(name: String, skillLevel: Int) async throws -> Bool {
+func apiUpdatePlayer(firstName: String, lastName : String, skillLevel: Int) async throws -> Bool {
     let token = getUserToken()
     let playerId = getUserId()
     
-    let json : [String: Any] = ["name": name, "skillLevelId": skillLevel]
+    let json : [String: Any] = ["firstName": firstName, "lastName": lastName, "skillLevelId": skillLevel]
     
     print(json)
     
@@ -86,7 +86,7 @@ func apiUpdatePlayer(name: String, skillLevel: Int) async throws -> Bool {
     return false
 }
 
-func apiGetPlayer() async throws -> PlayerObj? {
+func apiGetPlayer() async throws -> Player? {
     let token = getUserToken()
     let userId = getUserId()
     print(userId)
