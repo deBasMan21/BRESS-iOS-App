@@ -39,7 +39,7 @@ func getCurrentGame() async throws -> Game? {
     return returnValue
 }
 
-func enterScore(score : [[String]], gameId : Int) async throws{
+func enterScore(score : [[String]], gameId : Int) async throws -> Bool{
     let token = getUserToken()
     let playerId : Int = getUserId()
     
@@ -62,6 +62,22 @@ func enterScore(score : [[String]], gameId : Int) async throws{
     
     let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
     print(jsonResponse)
+    
+    do{
+        let decoder = JSONDecoder()
+        let model = try decoder.decode(ErrorResponse.self, from: data)
+        
+        print(model)
+        
+        if model.errorCode == 404 && model.message == "Game not found" {
+            return false
+        }
+        
+    } catch let exception{
+        print("error", exception)
+    }
+    
+    return true
 }
 
 

@@ -14,7 +14,7 @@ struct EnterScoreView: View {
     var game : Game
     
     @State private var score : [[String]] = [["", "", ""], ["", "", ""]]
-    
+    @State private var showErrorPopUp: Bool = false
     @State private var buttonClicked = false
     
     @State private var showError = false
@@ -128,7 +128,6 @@ struct EnterScoreView: View {
                     Task.init{
                         buttonClicked = true
                         await saveScore()
-                        self.showPopUp = false
                         await refresh()
                     }
                 } else {
@@ -146,17 +145,14 @@ struct EnterScoreView: View {
                 .disabled(buttonClicked)
         
         }.padding(.bottom, 50)
+            .alert("Game heeft al een score", isPresented: $showErrorPopUp){
+                Button("OK", role: .cancel){
+                    showPopUp = false
+                }
+            }
     }
     
     func isValidScore() -> Bool {
-//        for playerScore in score {
-//            for setScore in playerScore{
-//                if setScore.isEmpty {
-//                    errorMessage = "Er is een veld leeg"
-//                    return false
-//                }
-//            }
-//        }
         for index in 0...1 {
             for j in 0...1{
                 if score[index][j].isEmpty{
@@ -219,9 +215,15 @@ struct EnterScoreView: View {
     func saveScore() async {
         do{
             showLoader = true
-            try await enterScore(score: score, gameId: game.id)
-            showPopUp = false
+            let result = try await enterScore(score: score, gameId: game.id)
+            
             showLoader = false
+            
+            if !result {
+                showErrorPopUp = true
+            } else {
+                showPopUp = false
+            }
         } catch let exception {
             print(exception)
         }
