@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-public let apiURL: String = "https://serverbuijsen.nl/api"
+public let apiURL: String = "https://bress-toernooi.nl/api"
 
 func apiLogin(email:String, password:String) async throws -> Bool {
     let token = Messaging.messaging().fcmToken
